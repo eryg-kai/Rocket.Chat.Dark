@@ -18,6 +18,9 @@ body {
   color: #fff;
   background-color: #36393e;
 }
+#rocket-chat .main-content {
+  background-color: #36393e;
+}
 .button,
 .button.clean {
   background-color: #7289da;
