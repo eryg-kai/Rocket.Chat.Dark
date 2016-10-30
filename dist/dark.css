@@ -502,6 +502,15 @@ textarea[disabled] {
 :-ms-input-placeholder {
   color: #888;
 }
+.-autocomplete-container {
+  background-color: #2e3136;
+}
+.-autocomplete-item {
+  border-color: #292c31;
+}
+.-autocomplete-item.selected {
+  background-color: #1a5066;
+}
 .full-page {
   background-color: #36393e;
   background-image: none;
