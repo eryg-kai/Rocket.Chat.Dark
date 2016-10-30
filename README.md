@@ -2,7 +2,7 @@
 A dark Discord-inspired theme for Rocket.Chat
 
 ## Install
-1. Copy the contents of dark.css or dark.min.css
+1. Copy the contents of `dist/dark.css` or `dist/dark.min.css`
 2. Go to Administration > Layout in Rocket.Chat
 3. Paste the copied contents into "Custom CSS"
 
