@@ -1,0 +1,159 @@
+box-bg = #2e3136
+
+.logoutOthers, .select-service
+	margin-top 15px
+
+.avatar-suggestion-item,
+.page-static .content .section .section-content
+.page-settings .content .section
+	border-color darken(box-bg, 5%)
+	background-color box-bg
+	color #aaa
+
+	.avatar
+		background-color darken(box-bg, 15%)
+
+.permissions-manager .permission-grid tbody,
+.statistics-table,
+.page-list .list table tbody
+	tr
+		background-color lighten(box-bg, 5%) !important
+
+		td
+			border none
+			padding 10px
+
+	tr:nth-of-type(even)
+		background-color darken(box-bg, 5%) !important
+
+	tr:hover
+		background-color highlight-color !important
+
+.permissions-manager .permission-grid,
+.statistics-table,
+.page-list .list table
+	border 1px solid darken(box-bg, 10%)
+
+	thead
+		font-weight 700
+		padding 10px
+
+		tr
+			background-color darken(box-bg, 10%)
+
+		td, th
+			border none
+			padding 10px
+
+		td *, td
+			color #fff
+
+.permissions-manager .form-role .form-buttons
+	margin-top 15px
+	padding 0
+
+.permissions-manager .form-role label
+	width 88px
+	text-align left
+
+.permissions-manager h2
+	border none
+
+form.inline
+	input[type='text'],
+	input[type='number'],
+	input[type='email'],
+	input[type='url'],
+	input[type='password'],
+	input[type='time'],
+	select
+		margin-top 10px
+		width 194px
+
+.page-list .list
+	.user-image
+		background-color transparent
+		margin 0
+		margin-left 15px
+
+		.avatar:after
+			left -16px
+
+.rocket-form .submit
+	padding 0 20px
+
+.page-settings
+	.content .section h1
+		margin 0
+		padding 0
+		color #eee
+
+	.start-import
+		margin-top 15px
+
+	.content
+		background-color chat-bg
+
+	.settings-file-preview .preview.no-file
+		background-color darken(box-bg, 15%)
+		margin-right 15px
+
+	.section
+		margin-left 0
+		margin-right 0
+		margin-top 0
+		margin-bottom 20px
+
+		.section-title .section-title-text
+			color #eee
+
+		.section-content
+			background-color transparent
+
+			.input-line
+				border-color mix(#fff, chat-bg, 4%)
+
+				input
+					background-color mix(#fff, chat-bg, 6%)
+					color #bbb
+					border none
+
+				> label
+					color #aaa
+
+.code-mirror-box .CodeMirror,
+.code-mirror-box.code-mirror-box-fullscreen .title
+	border-color darken(box-bg, 10%)
+
+.code-mirror-box .buttons
+	border-color darken(box-bg, 10%)
+	background-color darken(box-bg, 10%)
+
+.minicolors-theme-rocketchat .minicolors-swatch
+	background-color darken(box-bg, 10%)
+	top 0
+	left 0
+	height 35px
+	border none
+
+.admin-integrations-new-panel .admin-integrations-new-item
+	color #aaa
+
+	&:hover
+		background-color darken(box-bg, 10%)
+
+.new-role
+	margin-bottom 20px
+
+.page-container .content
+	padding 25px 40px
+
+@import "base16"
+
+.cm-s-default span.cm-qualifier
+	color #d28445
+
+#code-mirror-textarea,
+.cm-s-default.CodeMirror,
+.cm-s-default .CodeMirror-gutters
+	background darken(box-bg, 20%)

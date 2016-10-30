@@ -1,0 +1,564 @@
+// Dark Discord-inspired theme for Rocket.Chat.
+
+// This was developed with all colors removed. It will probably be fine even if
+// you don't do that, but if you see something weird try going to Administration
+// > Layout, delete all the values under "Colors", then click "Save Changes".
+
+// Remove the sidebar footer (take out this part if you want to keep the
+// footer).
+.side-nav .footer
+	display none
+
+.side-nav .rooms-list,
+.account-box .options
+	height 100%
+
+// I don't like want the formatting tips.
+.formatting-tips
+	display none !important
+.messages-container footer
+	min-height 57px !important
+
+// I don't like the admin tag.
+.role-tag[data-role="Admin"]
+	display none !important
+
+// Buttons.
+button-bg = #7289da
+button-fg = #ffffff
+button-cancel-bg = #bc2031
+button-secondary-bg = #eee
+button-secondary-fg = #444
+
+anchor-fg = button-bg
+
+// Role tags, bot tags.
+tag-bg = button-bg
+
+// Code blocks, blockquotes.
+box-bg = #2e3136
+box-fg = #888
+
+// Left and right sidebars.
+sidebar-bg = #2e3136
+
+// Online color.
+online = #3bb5e5
+away = #fcb316
+busy = #d30230
+
+// Main chat area.
+chat-bg = #36393e
+chat-fg = mix(#fff, chat-bg, 70%)
+
+loading-dots = #888
+highlight-color = #1a5066
+
+body
+	color #fff
+	background-color chat-bg
+
+.button, .button.clean
+	background-color button-bg
+	color button-fg
+
+	&:hover
+		background-color darken(button-bg, 10%)
+
+.button.clean.cancel-direct-message,
+.button.delete,
+.button.remove,
+.button.red
+	background-color button-cancel-bg
+	color button-fg
+
+	&:hover
+		background-color darken(button-cancel-bg, 10%)
+
+.button.lightblue
+	background-color #02acec
+
+	&:hover
+		background-color darken(#02acec, 10%)
+
+.button.secondary
+	background-color button-secondary-bg
+	color button-secondary-fg
+
+	&:hover
+		background-color darken(button-secondary-bg, 10%)
+
+// Loading dots.
+.loading > div
+	background-color loading-dots
+
+// Anchor color.
+a
+	color anchor-fg
+
+	&:hover
+		color darken(anchor-fg, 10%)
+
+// Includes all avatars: chat and sidebar.
+.avatar
+	box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5)
+
+	// There is already a border radius on .avatar but it doesn't affect the image
+	// (on Chromium at least).
+	.avatar-image
+		border-radius 4px
+
+.side-nav .rooms-list,  // Left sidebar with the rooms.
+.flex-tab-bar           // Right sidebar with the small icons.
+	background-color sidebar-bg
+
+.account-box
+	// Dropdown after clicking the account box.
+	.options
+		background-color darken(sidebar-bg, 10%)
+
+		// Color of the dot next to "Online"
+		.status.online:after
+			background-color online
+			border-color darken(online, 10%)
+
+		button, a
+			color #aaa
+
+		button:hover, a:hover
+			background-color darken(sidebar-bg, 20%)
+			color #eee
+
+	// Color of the online dot next to the profile picture.
+	.info.status-online .thumb:after
+		background-color online
+		border-color darken(online, 10%)
+
+	.info.status-away .thumb:after
+		background-color away
+		border-color darken(away, 10%)
+
+	.info.status-busy .thumb:after
+		background-color busy
+		border-color darken(busy, 10%)
+
+	// Area above the left sidebar with the name and dropdown arrow.
+	.info
+		background-color #282b30
+		border-bottom 1px solid #1c1e22
+
+		h4
+			color #eee
+
+.hover .account-box .info h4
+	color #fff
+
+.status-offline, .icon-at.status-offline
+	color mix(chat-bg, #fff, 25%)
+
+.status-online, .icon-at.status-online
+	color online
+
+// Color of the dots.
+.user-image.status-online .avatar:after
+	background-color online
+	border-color darken(online, 10%)
+
+.user-image.status-away .avatar:after
+	background-color #fcb316
+	border-color darken(#fcb316, 10%)
+
+.user-image.status-busy .avatar:after
+	background-color #d30230
+	border-color darken(#d30230, 10%)
+
+// Left sidebar.
+.side-nav
+	border-right 1px solid darken(chat-bg, 10%)
+	box-shadow 1px 0 2px -1px rgba(0, 0, 0, 0.5)
+
+	&:before
+		display none
+
+	.header
+		background-color darken(sidebar-bg, 10%)
+
+	> .arrow
+		&:before, &:after
+			background-color #888
+
+	h3
+		font-weight 700
+		color mix(sidebar-bg, #fff, 40%)
+
+	ul a
+		color mix(sidebar-bg, #fff, 45%)
+
+	.status-offline
+		color mix(sidebar-bg, #fff, 45%)
+
+	.status-online
+		color mix(sidebar-bg, online, 45%)
+
+	.status-away
+		color mix(sidebar-bg, away, 45%)
+
+	.status-busy
+		color mix(sidebar-bg, busy, 45%)
+
+	.more
+		color mix(sidebar-bg, #fff, 70%)
+
+	h3.active
+		color #fff
+
+	ul a
+		padding-left 10px
+
+		&:hover
+			background-color darken(sidebar-bg, 10%)
+
+	// Active room
+	ul li.active
+		a
+			background-color darken(sidebar-bg, 10%)
+			color #fff
+
+		.status-offline
+			color mix(sidebar-bg, #fff, 25%)
+
+		.status-online
+			color online
+
+		.status-away
+			color away
+
+		.status-busy
+			color busy
+
+// The main bar that goes above the chat area.
+.fixed-title
+	border-bottom 1px solid darken(chat-bg, 10%)
+	background-color chat-bg
+
+// The main chat pane/area.
+.messages-container
+	border none
+
+	.footer
+		background-color chat-bg
+		border-top 1px solid mix(#fff, chat-bg, 6%)
+		box-shadow 0 -1px 2px -1px rgba(0, 0, 0, 0.5)
+		padding-top 23px
+		min-height 90px
+
+	.message-form
+		// Not sure what this is yet but it's underneath the chat input on the left.
+		.stream-info
+			background-color chat-bg
+
+		> .message-input .input-message-container .inner-left-toolbar
+			top 11px
+
+		// Help underneath the chat input that shows how to format text.
+		.formatting-tips
+			color #fff
+
+			a
+				font-weight 700
+
+		// Chat input.
+		textarea
+			background-color mix(#fff, chat-bg, 6%)
+			color #bbb
+			border 2px solid mix(#fff, chat-bg, 10%)
+			border-right none
+
+			&.editing
+				background-color highlight-color
+
+		// Wraps around the textarea and buttons.
+		> .message-input
+			border none
+
+		// Buttons on the right of the chat input.
+		> .message-input > .file,
+		> .message-input .message-buttons
+			background-color box-bg
+			border 1px solid darken(box-bg, 10%)
+			color box-fg
+
+			&:hover
+				background-color darken(box-bg, 10%)
+				color lighten(box-fg, 10%)
+
+// Slide-in menu on the left sidebar.
+.flex-nav
+	.content
+		background-color sidebar-bg
+
+	footer
+		background-color darken(sidebar-bg, 10%)
+
+	header
+		background-color darken(sidebar-bg, 10%)
+
+.side-nav .footer
+	background-color darken(sidebar-bg, 10%)
+
+textarea,
+select,
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+.flex-nav .input-line input[type='text'],
+.flex-nav .input-line input[type='password'],
+.flex-nav .input-line select
+	background-color mix(#fff, chat-bg, 6%)
+	color #bbb
+	border 1px solid transparent
+
+	&:focus
+		border-color highlight-color
+
+input[type="button"]
+	border none
+
+#rocket-chat
+	background-color chat-bg
+
+.user-view .info .role-tag
+	background-color tag-bg
+
+// Chat messages.
+.message
+	border-top 1px solid mix(#fff, chat-bg, 4%)
+	padding-top 20px
+	margin-top 16px
+
+	a
+		color anchor-fg
+
+		&:hover
+			color darken(anchor-fg, 10%)
+
+	.user
+		color #fafafa
+
+		&:hover
+			color #fff
+
+	.body
+		color chat-fg
+
+	.info
+		.is-bot, .role-tag
+			background-color tag-bg
+
+		.role-tag
+			margin-right 6px
+
+	&.sequential
+		border-top none
+		padding-top 0
+		margin-top 0
+
+	&.editing .body
+		background-color highlight-color
+		color mix(#fff, highlight-color, 70%)
+
+	&.system .body
+		color darken(chat-fg, 20%)
+
+	&:hover
+		background-color transparent
+
+	// The menu that appears when you click the gear icon in a chat message.
+	.message-dropdown
+		background-color box-bg
+
+		ul li
+			color #999
+
+			&:first-child
+				background-color box-bg
+				border-right-color darken(box-bg, 10%)
+
+			&:hover
+				background-color darken(box-bg, 10%)
+
+// Message highlight (like when you visit a link to a specific message).
+@keyframes highlight
+	0%
+		background highlight-color
+	100%
+		background none
+
+// "Start of conversation" message.
+.messages-box .start
+	color #888
+	text-transform uppercase
+	font-weight 700
+	font-size 12px
+
+// The new day divider with the date of that day.
+.message.new-day
+	padding-top 50px
+	border-top none
+	margin-top 0
+
+	.day-divider
+		color #777
+		background-color chat-bg
+
+		&:before
+			border-bottom-color mix(#fff, chat-bg, 15%)
+
+		span
+			color mix(#fff, chat-bg, 15%)
+			background-color chat-bg
+
+select
+	cursor pointer
+
+// Right sidebar.
+.flex-tab-bar
+	border-left 1px solid darken(chat-bg, 10%)
+	box-shadow -1px 0 2px -1px rgba(0, 0, 0, 0.5)
+
+	// Buttons on the right sidebar.
+	.tab-button:hover,
+	.tab-button.active
+		background-color darken(sidebar-bg, 30%)
+
+.flex-tab
+	background-color darken(sidebar-bg, 10%)
+
+	.content
+		background-color darken(sidebar-bg, 10%)
+		box-shadow -1px 0 3px 0 rgba(0, 0, 0, 0.2)
+
+		> div
+			background-color darken(sidebar-bg, 10%)
+
+	.control
+		background-color transparent
+
+	.day-divider
+		color #777
+		background-color darken(sidebar-bg, 10%)
+
+		&:before
+			border-bottom-color rgba(255, 255, 255, 0.06)
+
+		span
+			background-color darken(sidebar-bg, 10%)
+
+.message .day-divider
+	height 40px
+
+	&:before
+		top 20px
+
+// Blockquotes and attachments.
+.attachment
+	.attachment-block .attachment-block-border
+		background-color darken(chat-bg, 30%)
+
+	.attachment-title > a
+		text-transform uppercase
+		font-weight 700
+		font-size 12px
+
+	.attachment-download-icon
+		background-color box-bg
+		color box-fg
+		border-color darken(box-bg, 5%)
+
+		&:hover
+			background-color darken(box-bg, 10%)
+			color lighten(box-fg, 10%)
+			border-color darken(box-bg, 10%)
+
+.emoji-picker .emojis .emoji-list li:hover
+	background-color box-fg
+
+.emoji-picker-icon
+	color #666
+
+code
+	background-color box-bg
+	border-color darken(box-bg, 5%)
+	color box-fg
+
+pre
+	display block
+
+.list-view
+	>.title .see-all
+		text-decoration none
+		color #888
+
+		&:hover
+			color #fff
+
+	.list
+		color #eee
+
+		&.lines
+			margin-left 15px
+
+.control, .list input[type="text"].editing
+	margin-bottom 15px
+
+.list-view.uploaded-files-list
+	a.file-name
+		color anchor-fg
+		border-bottom-color mix(#fff, sidebar-bg, 10%)
+
+		&:hover
+			color darken(anchor-fg, 10%)
+			text-decoration none
+
+	i
+		color #888
+
+	i.file-download:hover
+		color anchor-fg
+
+.load-more-loading
+	margin-left 15px
+
+.list-view .list.lines .load-more-loading
+	margin-left 0
+
+input[readonly], input[disabled], textarea[readonly], textarea[disabled]
+	background-color mix(#000, chat-bg, 10%) !important
+
+placeholder = #888
+::-webkit-input-placeholder
+	color placeholder
+
+:-moz-placeholder
+	color placeholder
+
+::-moz-placeholder
+	color placeholder
+
+:-ms-input-placeholder
+	color placeholder
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.javascript .hljs-title,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status
+	color #abb2bf
+
+@import "dark-admin"
+@import "atom-one-dark"
