@@ -508,6 +508,9 @@ textarea[disabled] {
 .hljs-status {
   color: #abb2bf;
 }
+.settings-description {
+  color: #c2c3c5;
+}
 .logoutOthers,
 .select-service {
   margin-top: 15px;
