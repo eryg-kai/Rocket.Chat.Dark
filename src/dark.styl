@@ -50,7 +50,7 @@ sidebar-bg = #2e3136
 // Online color.
 online = #3bb5e5
 away = #fcb316
-busy = #d30230
+busy = #f04747
 
 // Main chat area.
 chat-bg = #36393e
@@ -566,17 +566,25 @@ placeholder = #888
 	background-color chat-bg
 	background-image none
 
-#login-card
-	background-color box-bg
-	color box-fg
-
 .login-terms
 	color chat-fg
 
 #login-card
+	background-color box-bg
+	color box-fg
+
 	.input-text
 		input, select
 			border-color mix(#fff, chat-bg, 4%)
+
+			&.error
+				border-color busy
+
+		.input-error
+			color mix(busy, box-bg, 80%)
+			padding 0
+			margin-top 5px
+
 	.submit, .register, .forgot-password,
 	.back-to-login, .register-link-replacement
 		&:hover

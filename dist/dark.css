@@ -108,8 +108,8 @@ a:hover {
   border-color: #f3a703;
 }
 .account-box .info.status-busy .thumb:after {
-  background-color: #d30230;
-  border-color: #be022b;
+  background-color: #f04747;
+  border-color: #ee2a2a;
 }
 .account-box .info {
   background-color: #282b30;
@@ -172,7 +172,7 @@ a:hover {
   color: #9f7824;
 }
 .side-nav .status-busy {
-  color: #881732;
+  color: #983d3f;
 }
 .side-nav .more {
   color: #6c6e72;
@@ -200,7 +200,7 @@ a:hover {
   color: #fcb316;
 }
 .side-nav ul li.active .status-busy {
-  color: #d30230;
+  color: #f04747;
 }
 .fixed-title {
   border-bottom: 1px solid #313338;
@@ -506,16 +506,25 @@ textarea[disabled] {
   background-color: #36393e;
   background-image: none;
 }
+.login-terms {
+  color: #c2c3c5;
+}
 #login-card {
   background-color: #2e3136;
   color: #888;
 }
-.login-terms {
-  color: #c2c3c5;
-}
 #login-card .input-text input,
 #login-card .input-text select {
   border-color: #3e4045;
+}
+#login-card .input-text input.error,
+#login-card .input-text select.error {
+  border-color: #f04747;
+}
+#login-card .input-text .input-error {
+  color: #c94243;
+  padding: 0;
+  margin-top: 5px;
 }
 #login-card .submit:hover,
 #login-card .register:hover,
