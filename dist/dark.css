@@ -206,6 +206,9 @@ a:hover {
   border-bottom: 1px solid #313338;
   background-color: #36393e;
 }
+.button.join {
+  margin-left: 10px;
+}
 .messages-container {
   border: none;
 }
@@ -214,10 +217,12 @@ a:hover {
   border-top: 1px solid #424449;
   box-shadow: 0 -1px 2px -1px rgba(0,0,0,0.5);
   padding-top: 23px;
+  padding-bottom: 23px;
   min-height: 90px;
 }
 .messages-container .message-form .stream-info {
   background-color: #36393e;
+  margin-top: -23px;
 }
 .messages-container .message-form > .message-input .input-message-container .inner-left-toolbar {
   top: 11px;

@@ -253,6 +253,9 @@ a
 	border-bottom 1px solid darken(chat-bg, 10%)
 	background-color chat-bg
 
+.button.join
+	margin-left 10px
+
 // The main chat pane/area.
 .messages-container
 	border none
@@ -262,12 +265,13 @@ a
 		border-top 1px solid mix(#fff, chat-bg, 6%)
 		box-shadow 0 -1px 2px -1px rgba(0, 0, 0, 0.5)
 		padding-top 23px
+		padding-bottom 23px
 		min-height 90px
 
 	.message-form
-		// Not sure what this is yet but it's underneath the chat input on the left.
 		.stream-info
 			background-color chat-bg
+			margin-top -23px
 
 		> .message-input .input-message-container .inner-left-toolbar
 			top 11px
