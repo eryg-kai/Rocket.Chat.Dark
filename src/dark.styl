@@ -13,11 +13,16 @@
 .account-box .options
 	height 100%
 
-// I don't like want the formatting tips.
+// I don't want the formatting tips.
 .formatting-tips
 	display none !important
 .messages-container footer
 	min-height 57px !important
+
+// These too.
+.full-page .logo > img
+.login-terms
+	display none !important
 
 // I don't like the admin tag.
 .role-tag[data-role="Admin"]
@@ -556,6 +561,26 @@ placeholder = #888
 
 :-ms-input-placeholder
 	color placeholder
+
+.full-page
+	background-color chat-bg
+	background-image none
+
+#login-card
+	background-color box-bg
+	color box-fg
+
+.login-terms
+	color chat-fg
+
+#login-card
+	.input-text
+		input, select
+			border-color mix(#fff, chat-bg, 4%)
+	.submit, .register, .forgot-password,
+	.back-to-login, .register-link-replacement
+		&:hover
+			color #eee
 
 .hljs-keyword,
 .css .rule .hljs-keyword,

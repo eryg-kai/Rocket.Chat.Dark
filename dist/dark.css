@@ -11,6 +11,10 @@
 .messages-container footer {
   min-height: 57px !important;
 }
+.full-page .logo > img,
+.login-terms {
+  display: none !important;
+}
 .role-tag[data-role="Admin"] {
   display: none !important;
 }
@@ -497,6 +501,28 @@ textarea[disabled] {
 }
 :-ms-input-placeholder {
   color: #888;
+}
+.full-page {
+  background-color: #36393e;
+  background-image: none;
+}
+#login-card {
+  background-color: #2e3136;
+  color: #888;
+}
+.login-terms {
+  color: #c2c3c5;
+}
+#login-card .input-text input,
+#login-card .input-text select {
+  border-color: #3e4045;
+}
+#login-card .submit:hover,
+#login-card .register:hover,
+#login-card .forgot-password:hover,
+#login-card .back-to-login:hover,
+#login-card .register-link-replacement:hover {
+  color: #eee;
 }
 .hljs-keyword,
 .css .rule .hljs-keyword,
