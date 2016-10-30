@@ -15,11 +15,15 @@
   display: none !important;
 }
 body {
-  color: #fff;
+  color: #c2c3c5;
   background-color: #36393e;
 }
 #rocket-chat .main-content {
   background-color: #36393e;
+}
+.burger i {
+  background-color: #c2c3c5;
+  opacity: 1 !important;
 }
 .button,
 .button.clean {
