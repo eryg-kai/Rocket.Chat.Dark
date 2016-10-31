@@ -418,6 +418,7 @@ input[type="button"]
 	text-transform uppercase
 	font-weight 700
 	font-size 12px
+	margin 12px 0 13px 0
 
 // The new day divider with the date of that day.
 .message.new-day
@@ -549,6 +550,18 @@ pre
 
 .list-view .list.lines .load-more-loading
 	margin-left 0
+
+// Unread marker in chat.
+.first-unread .body::before,
+.first-unread.first-unread-opaque .body::before
+	background-color online
+
+.first-unread .body::after
+	right 10px
+	background-color chat-bg
+
+.first-unread.first-unread-opaque .body::after
+	color online
 
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
 	background-color mix(#000, chat-bg, 10%) !important

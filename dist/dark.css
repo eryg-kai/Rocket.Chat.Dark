@@ -363,6 +363,7 @@ input[type="button"] {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 12px;
+  margin: 12px 0 13px 0;
 }
 .message.new-day {
   padding-top: 50px;
@@ -488,6 +489,17 @@ pre {
 }
 .list-view .list.lines .load-more-loading {
   margin-left: 0;
+}
+.first-unread .body::before,
+.first-unread.first-unread-opaque .body::before {
+  background-color: #3bb5e5;
+}
+.first-unread .body::after {
+  right: 10px;
+  background-color: #36393e;
+}
+.first-unread.first-unread-opaque .body::after {
+  color: #3bb5e5;
 }
 input[readonly],
 input[disabled],
