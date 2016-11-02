@@ -495,17 +495,18 @@ pre {
 }
 .first-unread .body::before {
   margin-left: -20px;
-}
-.first-unread .body::before,
-.first-unread.first-unread-opaque .body::before {
-  background-color: #387791;
+  background-color: #36393e;
 }
 .first-unread .body::after {
   right: 10px;
   background-color: #36393e;
+  color: #36393e;
+}
+.first-unread.first-unread-opaque .body::before {
+  background-color: #387791;
 }
 .first-unread.first-unread-opaque .body::after,
-.message.first-unread .day-divider span {
+.first-unread.first-unread-opaque .day-divider span {
   color: #387791;
 }
 input[readonly],

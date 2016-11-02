@@ -558,17 +558,18 @@ pre
 // Unread marker in chat.
 .first-unread .body::before
 	margin-left -20px
-
-.first-unread .body::before,
-.first-unread.first-unread-opaque .body::before
-	background-color mix(online, chat-bg, 50%)
+	background-color chat-bg
 
 .first-unread .body::after
 	right 10px
 	background-color chat-bg
+	color chat-bg
+
+.first-unread.first-unread-opaque .body::before
+	background-color mix(online, chat-bg, 50%)
 
 .first-unread.first-unread-opaque .body::after,
-.message.first-unread .day-divider span
+.first-unread.first-unread-opaque .day-divider span
 	color mix(online, chat-bg, 50%)
 
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
