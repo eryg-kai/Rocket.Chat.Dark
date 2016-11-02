@@ -551,17 +551,27 @@ pre
 .list-view .list.lines .load-more-loading
 	margin-left 0
 
+// Unread marker in the sidebar.
+.side-nav .unread
+	background-color mix(online, chat-bg, 50%)
+
 // Unread marker in chat.
+.first-unread .body::before
+	margin-left -20px
+	top 20px
+
 .first-unread .body::before,
 .first-unread.first-unread-opaque .body::before
-	background-color online
+	background-color mix(online, chat-bg, 50%)
 
 .first-unread .body::after
 	right 10px
 	background-color chat-bg
+	top 16px
 
-.first-unread.first-unread-opaque .body::after
-	color online
+.first-unread.first-unread-opaque .body::after,
+.message.first-unread .day-divider span
+	color mix(online, chat-bg, 50%)
 
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
 	background-color mix(#000, chat-bg, 10%) !important

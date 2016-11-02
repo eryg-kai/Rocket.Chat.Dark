@@ -490,16 +490,25 @@ pre {
 .list-view .list.lines .load-more-loading {
   margin-left: 0;
 }
+.side-nav .unread {
+  background-color: #387791;
+}
+.first-unread .body::before {
+  margin-left: -20px;
+  top: 20px;
+}
 .first-unread .body::before,
 .first-unread.first-unread-opaque .body::before {
-  background-color: #3bb5e5;
+  background-color: #387791;
 }
 .first-unread .body::after {
   right: 10px;
   background-color: #36393e;
+  top: 16px;
 }
-.first-unread.first-unread-opaque .body::after {
-  color: #3bb5e5;
+.first-unread.first-unread-opaque .body::after,
+.message.first-unread .day-divider span {
+  color: #387791;
 }
 input[readonly],
 input[disabled],
