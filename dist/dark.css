@@ -219,10 +219,11 @@ a:hover {
   padding-top: 23px;
   padding-bottom: 23px;
   min-height: 90px;
+  position: relative;
 }
 .messages-container .message-form .stream-info {
   background-color: #36393e;
-  margin-top: -23px;
+  position: absolute;
 }
 .messages-container .message-form > .message-input .input-message-container .inner-left-toolbar {
   top: 11px;
