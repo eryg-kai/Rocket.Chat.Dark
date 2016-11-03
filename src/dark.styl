@@ -500,9 +500,48 @@ select
 			color lighten(box-fg, 10%)
 			border-color darken(box-bg, 10%)
 
-.emoji-picker .emojis .emoji-list li:hover
-	background-color box-fg
+// Emoji popup.
+.emoji-picker
+	background-color box-bg
 
+	.input-line.search input
+		border-radius 0
+
+	.emojis .emoji-list li:hover
+		background-color darken(box-fg, 10%)
+
+	.filter > ul > li
+		border-bottom-color box-bg
+
+		.category-link i
+			color #888
+
+		&:hover
+			border-bottom-color #888
+
+		&.active
+			border-bottom-color online
+
+			.category-link i
+				color #eee
+
+		&.change-tone
+			padding-right 4px
+			border-bottom-color transparent
+
+			.current-tone, .tone-selector span
+				width 15px
+				height 15px
+
+			.tone-selector
+				background-color darken(box-bg, 15%)
+
+.input-line.search
+	.icon-search, .icon-right-open-small, .icon-sort-alt-up,
+	.icon-lock, .icon-comment
+		color #888
+
+// Icon in the message textarea.
 .emoji-picker-icon
 	color #666
 

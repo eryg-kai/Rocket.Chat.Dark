@@ -440,8 +440,48 @@ select {
   color: #949494;
   border-color: #292c31;
 }
+.emoji-picker {
+  background-color: #2e3136;
+}
+.emoji-picker .input-line.search input {
+  border-radius: 0;
+}
 .emoji-picker .emojis .emoji-list li:hover {
-  background-color: #888;
+  background-color: #7a7a7a;
+}
+.emoji-picker .filter > ul > li {
+  border-bottom-color: #2e3136;
+}
+.emoji-picker .filter > ul > li .category-link i {
+  color: #888;
+}
+.emoji-picker .filter > ul > li:hover {
+  border-bottom-color: #888;
+}
+.emoji-picker .filter > ul > li.active {
+  border-bottom-color: #3bb5e5;
+}
+.emoji-picker .filter > ul > li.active .category-link i {
+  color: #eee;
+}
+.emoji-picker .filter > ul > li.change-tone {
+  padding-right: 4px;
+  border-bottom-color: transparent;
+}
+.emoji-picker .filter > ul > li.change-tone .current-tone,
+.emoji-picker .filter > ul > li.change-tone .tone-selector span {
+  width: 15px;
+  height: 15px;
+}
+.emoji-picker .filter > ul > li.change-tone .tone-selector {
+  background-color: #272a2e;
+}
+.input-line.search .icon-search,
+.input-line.search .icon-right-open-small,
+.input-line.search .icon-sort-alt-up,
+.input-line.search .icon-lock,
+.input-line.search .icon-comment {
+  color: #888;
 }
 .emoji-picker-icon {
   color: #666;
