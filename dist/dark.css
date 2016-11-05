@@ -550,6 +550,12 @@ pre {
 .first-unread.first-unread-opaque .day-divider span {
   color: #387791;
 }
+.new-day.first-unread .body::before {
+  top: 20px;
+}
+.new-day.first-unread .body::after {
+  top: 16px;
+}
 input[readonly],
 input[disabled],
 textarea[readonly],
