@@ -605,6 +605,13 @@ textarea[disabled] {
 :-ms-input-placeholder {
   color: #888 !important;
 }
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+  background-color: rgba(0,0,0,0.05);
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2e3136;
+}
 .-autocomplete-container {
   background-color: #2e3136;
 }
