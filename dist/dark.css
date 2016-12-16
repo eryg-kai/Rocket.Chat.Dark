@@ -574,11 +574,11 @@ pre {
   margin-left: -20px;
   background-color: #36393e;
   z-index: 1;
-  top: 1px;
+  top: -1px;
 }
 .first-unread .body::after {
   left: initial;
-  top: -6px;
+  top: -8px;
   right: 10px;
   background-color: #36393e;
   color: #36393e;
