@@ -422,6 +422,9 @@ select {
 .message .day-divider:before {
   top: 20px;
 }
+blockquote:before {
+  background-color: #26282b;
+}
 .attachment .attachment-block .attachment-block-border {
   background-color: #26282b;
 }
