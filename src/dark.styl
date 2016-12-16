@@ -628,10 +628,13 @@ pre
 
 // Unread marker in chat.
 .first-unread .body::before
+	height 1px
 	margin-left -20px
 	background-color chat-bg
 
 .first-unread .body::after
+	left initial
+	top -8px
 	right 10px
 	background-color chat-bg
 	color chat-bg
@@ -649,6 +652,7 @@ pre
 .new-day.first-unread .body::after
 	top 16px
 
+// Popups.
 .message-popup
 	background-color box-bg
 	color box-fg
@@ -663,6 +667,7 @@ pre
 	color #fff
 	background-color highlight-color
 
+// Inputs.
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
 	background-color mix(#000, chat-bg, 10%) !important
 
@@ -679,6 +684,7 @@ placeholder = #888
 :-ms-input-placeholder
 	color placeholder !important
 
+// Scrollbar.
 .CodeMirror-scrollbar-filler,
 .CodeMirror-gutter-filler
 	background-color rgba(0, 0, 0, 0.05)
@@ -686,6 +692,7 @@ placeholder = #888
 ::-webkit-scrollbar-thumb
 	background-color box-bg
 
+// Autocomplete.
 .-autocomplete-container
 	background-color box-bg
 
@@ -699,6 +706,7 @@ placeholder = #888
 	background-color chat-bg
 	background-image none
 
+// Login page.
 .login-terms
 	color chat-fg
 
@@ -723,6 +731,7 @@ placeholder = #888
 		&:hover
 			color #eee
 
+// CodeMirror color fix.
 .hljs-keyword,
 .css .rule .hljs-keyword,
 .hljs-winutils,

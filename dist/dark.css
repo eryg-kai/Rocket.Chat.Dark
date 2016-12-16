@@ -570,10 +570,13 @@ pre {
   color: #fff;
 }
 .first-unread .body::before {
+  height: 1px;
   margin-left: -20px;
   background-color: #36393e;
 }
 .first-unread .body::after {
+  left: initial;
+  top: -8px;
   right: 10px;
   background-color: #36393e;
   color: #36393e;
