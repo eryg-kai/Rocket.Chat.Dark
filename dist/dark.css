@@ -578,7 +578,7 @@ pre {
 }
 .first-unread .body::after {
   left: initial;
-  top: -8px;
+  top: -6px;
   right: 10px;
   background-color: #36393e;
   color: #36393e;
