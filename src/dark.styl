@@ -631,6 +631,8 @@ pre
 	height 1px
 	margin-left -20px
 	background-color chat-bg
+	z-index 1
+	top 1px
 
 .first-unread .body::after
 	left initial
@@ -638,16 +640,17 @@ pre
 	right 10px
 	background-color chat-bg
 	color chat-bg
+	z-index 2
 
 .first-unread.first-unread-opaque .body::before
 	background-color mix(online, chat-bg, 50%)
 
 .first-unread.first-unread-opaque .body::after,
-.first-unread.first-unread-opaque .day-divider span
+.first-unread.first-unread-opaque:before
 	color mix(online, chat-bg, 50%)
 
 .new-day.first-unread .body::before
-	top 20px
+	top 23px
 
 .new-day.first-unread .body::after
 	top 16px

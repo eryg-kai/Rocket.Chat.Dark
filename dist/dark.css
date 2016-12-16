@@ -573,6 +573,8 @@ pre {
   height: 1px;
   margin-left: -20px;
   background-color: #36393e;
+  z-index: 1;
+  top: 1px;
 }
 .first-unread .body::after {
   left: initial;
@@ -580,16 +582,17 @@ pre {
   right: 10px;
   background-color: #36393e;
   color: #36393e;
+  z-index: 2;
 }
 .first-unread.first-unread-opaque .body::before {
   background-color: #387791;
 }
 .first-unread.first-unread-opaque .body::after,
-.first-unread.first-unread-opaque .day-divider span {
+.first-unread.first-unread-opaque:before {
   color: #387791;
 }
 .new-day.first-unread .body::before {
-  top: 20px;
+  top: 23px;
 }
 .new-day.first-unread .body::after {
   top: 16px;
