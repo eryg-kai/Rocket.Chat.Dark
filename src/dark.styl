@@ -40,7 +40,7 @@ anchor-fg = button-bg
 // Role tags, bot tags.
 tag-bg = button-bg
 
-// Code blocks, blockquotes.
+// Code blocks, blockquotes, popups.
 box-bg = #2e3136
 box-fg = #888
 
@@ -150,19 +150,6 @@ a
 			background-color darken(sidebar-bg, 20%)
 			color #eee
 
-	// Color of the online dot next to the profile picture.
-	.info.status-online .thumb:after
-		background-color online
-		border-color darken(online, 10%)
-
-	.info.status-away .thumb:after
-		background-color away
-		border-color darken(away, 10%)
-
-	.info.status-busy .thumb:after
-		background-color busy
-		border-color darken(busy, 10%)
-
 	// Area above the left sidebar with the name and dropdown arrow.
 	.info
 		background-color #282b30
@@ -170,6 +157,21 @@ a
 
 		h4
 			color #eee
+// Color of the online dot next to the profile picture and in popups.
+.account-box .info.status-online .thumb:after,
+.popup-user-status-online
+	background-color online
+	border-color darken(online, 10%)
+
+.account-box .info.status-away .thumb:after,
+.popup-user-status-away
+	background-color away
+	border-color darken(away, 10%)
+
+.account-box .info.status-busy .thumb:after,
+.popup-user-status-busy
+	background-color busy
+	border-color darken(busy, 10%)
 
 .hover .account-box .info h4
 	color #fff
@@ -630,6 +632,20 @@ pre
 
 .new-day.first-unread .body::after
 	top 16px
+
+.message-popup
+	background-color box-bg
+	color box-fg
+
+.message-popup-title
+	background-color darken(box-bg, 5%)
+	border-color darken(box-bg, 10%)
+	color lighten(box-fg, 30%)
+	font-weight 700
+
+.popup-item.selected
+	color #fff
+	background-color highlight-color
 
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
 	background-color mix(#000, chat-bg, 10%) !important

@@ -108,24 +108,27 @@ a:hover {
   background-color: #25272b;
   color: #eee;
 }
-.account-box .info.status-online .thumb:after {
-  background-color: #3bb5e5;
-  border-color: #22abe2;
-}
-.account-box .info.status-away .thumb:after {
-  background-color: #fcb316;
-  border-color: #f3a703;
-}
-.account-box .info.status-busy .thumb:after {
-  background-color: #f04747;
-  border-color: #ee2a2a;
-}
 .account-box .info {
   background-color: #282b30;
   border-bottom: 1px solid #1c1e22;
 }
 .account-box .info h4 {
   color: #eee;
+}
+.account-box .info.status-online .thumb:after,
+.popup-user-status-online {
+  background-color: #3bb5e5;
+  border-color: #22abe2;
+}
+.account-box .info.status-away .thumb:after,
+.popup-user-status-away {
+  background-color: #fcb316;
+  border-color: #f3a703;
+}
+.account-box .info.status-busy .thumb:after,
+.popup-user-status-busy {
+  background-color: #f04747;
+  border-color: #ee2a2a;
 }
 .hover .account-box .info h4 {
   color: #fff;
@@ -569,6 +572,20 @@ pre {
 }
 .new-day.first-unread .body::after {
   top: 16px;
+}
+.message-popup {
+  background-color: #2e3136;
+  color: #888;
+}
+.message-popup-title {
+  background-color: #2c2f33;
+  border-color: #292c31;
+  color: #acacac;
+  font-weight: 700;
+}
+.popup-item.selected {
+  color: #fff;
+  background-color: #1a5066;
 }
 input[readonly],
 input[disabled],
