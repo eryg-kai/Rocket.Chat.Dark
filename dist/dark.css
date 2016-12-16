@@ -157,6 +157,9 @@ a:hover {
   border-right: 1px solid #313338;
   box-shadow: 1px 0 2px -1px rgba(0,0,0,0.5);
 }
+.side-nav a {
+  transition: none;
+}
 .side-nav:before {
   display: none;
 }
@@ -197,6 +200,9 @@ a:hover {
 }
 .side-nav ul a:hover {
   background-color: #292c31;
+}
+.side-nav ul li.active {
+  background-color: transparent !important;
 }
 .side-nav ul li.active a {
   background-color: #292c31;

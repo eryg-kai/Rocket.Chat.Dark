@@ -200,6 +200,9 @@ a
 	border-right 1px solid darken(chat-bg, 10%)
 	box-shadow 1px 0 2px -1px rgba(0, 0, 0, 0.5)
 
+	a
+		transition none
+
 	&:before
 		display none
 
@@ -243,6 +246,8 @@ a
 
 	// Active room
 	ul li.active
+		background-color transparent !important
+
 		a
 			background-color darken(sidebar-bg, 10%)
 			color #fff
