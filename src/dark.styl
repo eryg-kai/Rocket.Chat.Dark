@@ -70,14 +70,19 @@ body
 	background-color chat-fg
 	opacity 1 !important
 
-.button, .button.clean
+.button,
+.button.clean,
+.side-nav .button,
+.button.primary
 	background-color button-bg
 	color button-fg
 
 	&:hover
+		color button-fg
 		background-color darken(button-bg, 10%)
 
 .button.cancel-direct-message,
+.button.cancel-channel,
 .button.delete,
 .button.remove,
 .button.red
@@ -85,6 +90,7 @@ body
 	color button-fg
 
 	&:hover
+		color button-fg
 		background-color darken(button-cancel-bg, 10%)
 
 .button.lightblue
@@ -263,6 +269,10 @@ a
 
 		.status-busy
 			color busy
+
+	// Room with an alert
+	ul li.has-alert .name
+		color inherit
 
 // The main bar that goes above the chat area.
 .main-content header
@@ -614,6 +624,7 @@ pre
 // Unread marker in the sidebar.
 .side-nav .unread
 	background-color mix(online, chat-bg, 50%)
+	color #fff
 
 // Unread marker in chat.
 .first-unread .body::before

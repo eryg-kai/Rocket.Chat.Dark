@@ -30,15 +30,21 @@ body {
   opacity: 1 !important;
 }
 .button,
-.button.clean {
+.button.clean,
+.side-nav .button,
+.button.primary {
   background-color: #7289da;
   color: #fff;
 }
 .button:hover,
-.button.clean:hover {
+.button.clean:hover,
+.side-nav .button:hover,
+.button.primary:hover {
+  color: #fff;
   background-color: #5873d3;
 }
 .button.cancel-direct-message,
+.button.cancel-channel,
 .button.delete,
 .button.remove,
 .button.red {
@@ -46,9 +52,11 @@ body {
   color: #fff;
 }
 .button.cancel-direct-message:hover,
+.button.cancel-channel:hover,
 .button.delete:hover,
 .button.remove:hover,
 .button.red:hover {
+  color: #fff;
   background-color: #a91d2c;
 }
 .button.lightblue {
@@ -219,6 +227,9 @@ a:hover {
 }
 .side-nav ul li.active .status-busy {
   color: #f04747;
+}
+.side-nav ul li.has-alert .name {
+  color: inherit;
 }
 .main-content header {
   border-bottom: 1px solid #313338;
@@ -556,6 +567,7 @@ pre {
 }
 .side-nav .unread {
   background-color: #387791;
+  color: #fff;
 }
 .first-unread .body::before {
   margin-left: -20px;
