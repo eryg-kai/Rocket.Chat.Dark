@@ -22,9 +22,14 @@ box-bg = #2e3136
 	tr
 		background-color lighten(box-bg, 5%) !important
 
+		th
+			border none
+			background-color transparent !important
+
 		td
 			border none
 			padding 10px
+			background-color transparent !important
 
 	tr:nth-of-type(even)
 		background-color darken(box-bg, 5%) !important
@@ -41,15 +46,19 @@ box-bg = #2e3136
 		font-weight 700
 		padding 10px
 
+		.icon-edit
+			display none
+
+		a
+			color chat-fg
+
 		tr
 			background-color darken(box-bg, 10%)
 
 		td, th
 			border none
 			padding 10px
-
-		td *, td
-			color #fff
+			background-color transparent
 
 .permissions-manager .form-role .form-buttons
 	margin-top 15px
@@ -116,6 +125,10 @@ form.inline
 			.input-line
 				border-color mix(#fff, chat-bg, 4%)
 
+				.settings-alert
+					background-color busy
+					border-color darken(busy, 10%)
+
 				input
 					background-color mix(#fff, chat-bg, 6%)
 					color #bbb
@@ -148,8 +161,14 @@ form.inline
 .new-role
 	margin-bottom 20px
 
-.page-container .content
-	padding 25px 40px
+.page-container
+	background-color transparent
+
+	.content
+		padding 25px 40px
+
+	h3
+		margin-bottom 10px
 
 @import "base16"
 

@@ -77,7 +77,7 @@ body
 	&:hover
 		background-color darken(button-bg, 10%)
 
-.button.clean.cancel-direct-message,
+.button.cancel-direct-message,
 .button.delete,
 .button.remove,
 .button.red
@@ -129,13 +129,22 @@ a
 	.options
 		background-color darken(sidebar-bg, 10%)
 
-		// Color of the dot next to "Online"
+		// Color of the dots next to "Online", "Away", and "Busy".
 		.status.online:after
 			background-color online
 			border-color darken(online, 10%)
 
+		.status.away:after
+			background-color away
+			border-color darken(away, 10%)
+
+		.status.busy:after
+			background-color busy
+			border-color darken(busy, 10%)
+
 		button, a
 			color #aaa
+			background-color transparent
 
 		button:hover, a:hover
 			background-color darken(sidebar-bg, 20%)
@@ -249,7 +258,7 @@ a
 			color busy
 
 // The main bar that goes above the chat area.
-.fixed-title
+.main-content header
 	border-bottom 1px solid darken(chat-bg, 10%)
 	background-color chat-bg
 
@@ -270,6 +279,8 @@ a
 		position relative
 
 	.message-form
+		margin-bottom 0
+
 		.stream-info
 			background-color chat-bg
 			position absolute
@@ -373,6 +384,7 @@ input[type="button"]
 	.info
 		.is-bot, .role-tag
 			background-color tag-bg
+			color #fff
 
 		.role-tag
 			margin-right 6px
@@ -427,16 +439,14 @@ input[type="button"]
 	border-top none
 	margin-top 0
 
-	.day-divider
-		color #777
+	&:before
+		color mix(#fff, chat-bg, 15%)
 		background-color chat-bg
+		top 13px
 
-		&:before
-			border-bottom-color mix(#fff, chat-bg, 15%)
-
-		span
-			color mix(#fff, chat-bg, 15%)
-			background-color chat-bg
+	&:after
+		border-color mix(#fff, chat-bg, 15%)
+		top 23px
 
 select
 	cursor pointer
@@ -626,16 +636,16 @@ input[readonly], input[disabled], textarea[readonly], textarea[disabled]
 
 placeholder = #888
 ::-webkit-input-placeholder
-	color placeholder
+	color placeholder !important
 
 :-moz-placeholder
-	color placeholder
+	color placeholder !important
 
 ::-moz-placeholder
-	color placeholder
+	color placeholder !important
 
 :-ms-input-placeholder
-	color placeholder
+	color placeholder !important
 
 .-autocomplete-container
 	background-color box-bg
