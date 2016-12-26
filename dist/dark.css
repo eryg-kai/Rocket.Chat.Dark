@@ -597,6 +597,9 @@ pre {
 .new-day.first-unread .body::after {
   top: 16px;
 }
+.container-bars .unread-bar {
+  background-color: #1a5066;
+}
 .message-popup {
   background-color: #2e3136;
   color: #888;
