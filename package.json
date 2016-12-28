@@ -27,6 +27,7 @@
 	},
 	"scripts": {
 		"gulp": "node_modules/.bin/gulp",
+		"build": "node_modules/.bin/gulp",
 		"version": "npm run gulp && git add -A dist",
 		"postversion": "git push && git push --tags"
 	},

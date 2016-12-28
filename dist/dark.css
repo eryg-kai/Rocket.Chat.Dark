@@ -572,7 +572,7 @@ pre {
 .first-unread .body::before {
   height: 1px;
   margin-left: -20px;
-  background-color: #36393e;
+  background-color: transparent;
   z-index: 1;
   top: -1px;
 }
@@ -580,8 +580,8 @@ pre {
   left: initial;
   top: -8px;
   right: 10px;
-  background-color: #36393e;
-  color: #36393e;
+  background-color: transparent;
+  color: transparent;
   z-index: 2;
 }
 .first-unread.first-unread-opaque .body::before {
@@ -590,6 +590,10 @@ pre {
 .first-unread.first-unread-opaque .body::after,
 .first-unread.first-unread-opaque:before {
   color: #387791;
+  background-color: #36393e;
+}
+.first-unread.sequential.message {
+  padding-top: 0;
 }
 .new-day.first-unread .body::before {
   top: 23px;
