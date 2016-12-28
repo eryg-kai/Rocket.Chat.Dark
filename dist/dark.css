@@ -580,8 +580,8 @@ pre {
   left: initial;
   top: -8px;
   right: 10px;
-  background-color: transparent;
   color: transparent;
+  background-color: transparent;
   z-index: 2;
 }
 .first-unread.first-unread-opaque .body::before {
