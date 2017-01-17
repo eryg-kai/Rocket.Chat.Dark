@@ -4,6 +4,9 @@
 // you don't do that, but if you see something weird try going to Administration
 // > Layout, delete all the values under "Colors", then click "Save Changes".
 
+.primary-background-color
+	background-color transparent
+
 // Remove the sidebar footer (take out this part if you want to keep the
 // footer).
 .side-nav .footer
@@ -12,6 +15,9 @@
 .side-nav .rooms-list,
 .account-box .options
 	height 100%
+
+.flex-nav .content
+	height calc(100% - 60px)
 
 // I don't want the formatting tips.
 .formatting-tips
@@ -77,6 +83,10 @@ body
 	background-color button-bg
 	color button-fg
 
+	&[disabled]
+		background-color mix(chat-bg, button-bg, 50%)
+		color mix(chat-bg, button-fg, 50%)
+
 	&:hover
 		color button-fg
 		background-color darken(button-bg, 10%)
@@ -85,13 +95,21 @@ body
 .button.cancel-channel,
 .button.delete,
 .button.remove,
-.button.red
+.button.red,
+.button.danger
 	background-color button-cancel-bg
 	color button-fg
+
+	&[disabled]
+		background-color mix(chat-bg, button-cancel-bg, 50%)
+		color mix(chat-bg, button-fg, 50%)
 
 	&:hover
 		color button-fg
 		background-color darken(button-cancel-bg, 10%)
+
+.color-error-contrast
+	color button-fg
 
 .button.lightblue
 	background-color #02acec
@@ -129,6 +147,9 @@ a
 .side-nav .rooms-list,  // Left sidebar with the rooms.
 .flex-tab-bar           // Right sidebar with the small icons.
 	background-color sidebar-bg
+
+.border-component-color
+	color transparent
 
 .account-box
 	// Dropdown after clicking the account box.

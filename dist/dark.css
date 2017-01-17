@@ -1,9 +1,15 @@
+.primary-background-color {
+  background-color: transparent;
+}
 .side-nav .footer {
   display: none;
 }
 .side-nav .rooms-list,
 .account-box .options {
   height: 100%;
+}
+.flex-nav .content {
+  height: calc(100% - 60px);
 }
 .formatting-tips {
   display: none !important;
@@ -36,6 +42,13 @@ body {
   background-color: #7289da;
   color: #fff;
 }
+.button[disabled],
+.button.clean[disabled],
+.side-nav .button[disabled],
+.button.primary[disabled] {
+  background-color: #54618c;
+  color: #9a9c9e;
+}
 .button:hover,
 .button.clean:hover,
 .side-nav .button:hover,
@@ -47,17 +60,31 @@ body {
 .button.cancel-channel,
 .button.delete,
 .button.remove,
-.button.red {
+.button.red,
+.button.danger {
   background-color: #bc2031;
   color: #fff;
+}
+.button.cancel-direct-message[disabled],
+.button.cancel-channel[disabled],
+.button.delete[disabled],
+.button.remove[disabled],
+.button.red[disabled],
+.button.danger[disabled] {
+  background-color: #792c37;
+  color: #9a9c9e;
 }
 .button.cancel-direct-message:hover,
 .button.cancel-channel:hover,
 .button.delete:hover,
 .button.remove:hover,
-.button.red:hover {
+.button.red:hover,
+.button.danger:hover {
   color: #fff;
   background-color: #a91d2c;
+}
+.color-error-contrast {
+  color: #fff;
 }
 .button.lightblue {
   background-color: #02acec;
@@ -90,6 +117,9 @@ a:hover {
 .side-nav .rooms-list,
 .flex-tab-bar {
   background-color: #2e3136;
+}
+.border-component-color {
+  color: transparent;
 }
 .account-box .options {
   background-color: #292c31;
