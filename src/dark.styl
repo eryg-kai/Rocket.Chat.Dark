@@ -36,8 +36,9 @@
 
 // Buttons.
 button-bg = #7289da
-button-fg = #ffffff
+button-fg = mix(button-bg, #ffffff, 20%)
 button-cancel-bg = #bc2031
+button-cancel-fg = mix(button-cancel-bg, #ffffff, 20%)
 button-secondary-bg = #eee
 button-secondary-fg = #444
 
@@ -76,6 +77,11 @@ body
 	background-color chat-fg
 	opacity 1 !important
 
+.button
+	line-height 100%
+	font-weight 700
+	font-size 12px
+
 .button,
 .button.clean,
 .side-nav .button,
@@ -98,18 +104,18 @@ body
 .button.red,
 .button.danger
 	background-color button-cancel-bg
-	color button-fg
+	color button-cancel-fg
 
 	&[disabled]
 		background-color mix(chat-bg, button-cancel-bg, 50%)
-		color mix(chat-bg, button-fg, 50%)
+		color mix(chat-bg, button-cancel-fg, 50%)
 
 	&:hover
 		color button-fg
 		background-color darken(button-cancel-bg, 10%)
 
 .color-error-contrast
-	color button-fg
+	color button-cancel-fg
 
 .button.lightblue
 	background-color #02acec
@@ -123,6 +129,14 @@ body
 
 	&:hover
 		background-color darken(button-secondary-bg, 10%)
+
+.button.button-fullscreen
+	background-color transparent
+	color box-fg
+
+	&:hover
+		background-color transparent
+		color button-fg
 
 // Loading dots.
 .loading > div
