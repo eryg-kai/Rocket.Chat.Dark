@@ -5,11 +5,14 @@
   display: none;
 }
 .side-nav .rooms-list,
-.account-box .options {
+.account-box .options,
+.flex-nav .content {
   height: 100%;
 }
 .flex-nav .content {
-  height: calc(100% - 60px);
+  top: 0;
+  padding-top: 70px;
+  padding-bottom: 10px;
 }
 .formatting-tips {
   display: none !important;

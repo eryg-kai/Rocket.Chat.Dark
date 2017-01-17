@@ -12,12 +12,16 @@
 .side-nav .footer
 	display none
 
+// Make the sidebars take up the full height now that the sidebar is gone.
 .side-nav .rooms-list,
-.account-box .options
+.account-box .options,
+.flex-nav .content
 	height 100%
 
 .flex-nav .content
-	height calc(100% - 60px)
+	top 0
+	padding-top 70px
+	padding-bottom 10px
 
 // I don't want the formatting tips.
 .formatting-tips
