@@ -135,7 +135,7 @@ a:hover {
   background-color: #2e3136;
 }
 .border-component-color {
-  color: transparent;
+  border-color: transparent;
 }
 .account-box .options {
   background-color: #292c31;
