@@ -684,7 +684,7 @@ textarea[disabled] {
 }
 .CodeMirror-scrollbar-filler,
 .CodeMirror-gutter-filler {
-  background-color: rgba(0,0,0,0.05);
+  background-color: rgba(0,0,0,0.05) !important;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #2e3136;
