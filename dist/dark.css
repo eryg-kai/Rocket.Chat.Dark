@@ -768,6 +768,8 @@ textarea[disabled] {
 .page-list .list table tbody tr th {
   border: none;
   background-color: transparent !important;
+  color: #c2c3c5;
+  font-weight: 400;
 }
 .permissions-manager .permission-grid tbody tr td,
 .statistics-table tr td,
@@ -775,6 +777,7 @@ textarea[disabled] {
   border: none;
   padding: 10px;
   background-color: transparent !important;
+  color: #c2c3c5;
 }
 .permissions-manager .permission-grid tbody tr:nth-of-type(even),
 .statistics-table tr:nth-of-type(even),
