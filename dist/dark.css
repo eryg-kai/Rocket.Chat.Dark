@@ -274,8 +274,10 @@ a:hover {
 .side-nav ul li.active .status-busy {
   color: #f04747;
 }
-.side-nav ul li.has-alert .name {
-  color: inherit;
+.side-nav ul li.has-alert .name,
+.side-nav ul li.has-alert .icon-lock,
+.side-nav ul li.has-alert .icon-hash {
+  color: #3bb5e5 !important;
 }
 .main-content header {
   border-bottom: 1px solid #313338;
