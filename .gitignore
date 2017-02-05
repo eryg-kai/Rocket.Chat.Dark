@@ -1,3 +1,6 @@
 node_modules
 npm-debug.log
 *.swp
+src/custom.styl
+dist/custom.css
+dist/custom.min.css
