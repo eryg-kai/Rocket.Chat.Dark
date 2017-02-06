@@ -6,6 +6,10 @@ A dark Discord-inspired theme for Rocket.Chat
 2. Go to Administration > Layout in Rocket.Chat
 3. Paste the copied contents into "Custom CSS"
 
+### Automatic install
+1. `npm install`
+2. `npm run deploy`
+
 ### Custom additions
 Custom styling that can't or shouldn't be in source control goes in
 `src/custom.styl`. If you use this, you'll need to run the build or development
@@ -19,5 +23,5 @@ line.
 
 ## Development
 1. `npm install`
-2. `npm run gulp watch`
+2. `npm run watch`
 3. Edit source in `src`

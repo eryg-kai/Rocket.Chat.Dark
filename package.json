@@ -1,6 +1,6 @@
 {
   "name": "Rocket.Chat.Dark",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "A dark Discord-inspired theme for Rocket.Chat",
   "author": "0x0049 <dev@0x0049.me> (https://www.0x0049.me)",
   "repository": {
@@ -23,11 +23,14 @@
     "gulp-autoprefixer": "3.1.x",
     "gulp-clean-css": "2.0.x",
     "gulp-rename": "1.2.x",
-    "gulp-stylus": "2.5.x"
+    "gulp-stylus": "2.5.x",
+    "request": "2.79.x"
   },
   "scripts": {
     "gulp": "node_modules/.bin/gulp",
     "build": "node_modules/.bin/gulp",
+    "watch": "node_modules/.bin/gulp watch",
+    "deploy": "node_modules/.bin/gulp deploy",
     "version": "npm run gulp && git add -A dist",
     "postversion": "git push && git push --tags"
   },

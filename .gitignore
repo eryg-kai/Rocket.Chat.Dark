@@ -4,3 +4,4 @@ npm-debug.log
 src/custom.styl
 dist/custom.css
 dist/custom.min.css
+deploy.json

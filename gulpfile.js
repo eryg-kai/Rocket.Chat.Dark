@@ -5,8 +5,22 @@ var clean = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var stylus = require('gulp-stylus');
 var fs = require('fs');
+var deploy = require('./lib/deploy.js');
 
-// This generates the standard works-for-everyone CSS files that get committed.
+/**
+ * Deploys the generated CSS file to Rocket.Chat.
+ */
+gulp.task('deploy', ['dark', 'custom'], function (done) {
+	var file = fs.existsSync('src/custom.styl') ? 'custom.css' : 'dark.css';
+	deploy(__dirname + '/dist/' + file, function (error) {
+		done(error);
+		process.exit(); // TODO: Figure this out.
+	});
+});
+
+/**
+ * Generates the standard works-for-everyone CSS files that get committed.
+ */
 gulp.task('dark', function () {
 	return gulp.src('src/dark.styl')
 		.pipe(stylus())
@@ -23,8 +37,10 @@ gulp.task('dark', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-// This generates a custom build that shouldn't be in source control. Only runs
-// if src/custom.styl exists.
+/**
+ * This generates a custom build that shouldn't be in source control. Only runs
+ * if src/custom.styl exists.
+ */
 gulp.task('custom', function () {
 	if (fs.existsSync('src/custom.styl')) {
 		return gulp.src('src/custom.styl')
