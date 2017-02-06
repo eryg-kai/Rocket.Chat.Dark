@@ -848,6 +848,12 @@ form.inline select {
   margin-top: 10px;
   width: 194px;
 }
+.page-list .results {
+  border: none;
+  color: #c2c3c5;
+  margin-bottom: 0;
+  padding: 20px 0;
+}
 .page-list .list .user-image {
   background-color: transparent;
   margin: 0;
