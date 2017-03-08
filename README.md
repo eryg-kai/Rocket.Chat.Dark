@@ -17,6 +17,19 @@ steps below and copy `dist/custom.css` to Rocket.Chat instead of
 `dist/dark.css`. `src/custom.styl` should have `@import "dark"` as the first
 line.
 
+For example, I use this to color the names of specific users. My
+`src/custom.styl` looks something like this:
+
+```css
+@import "dark"
+
+[data-username="user1"] .user
+	color some-color
+
+[data-username="user2"] .user
+	color some-other-color
+```
+
 ## Building
 1. `npm install`
 2. `npm run build`
