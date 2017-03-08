@@ -676,6 +676,10 @@ pre {
 .background-component-color button:hover {
   color: #fff;
 }
+.background-primary-action-color {
+  background-color: #1a5066;
+  color: #d1dce0;
+}
 .sweet-alert {
   background-color: #2e3136;
 }
