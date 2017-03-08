@@ -718,6 +718,40 @@ pre
 	color #fff
 	background-color highlight-color
 
+// Upload bar. (And others?)
+.background-component-color
+	background-color highlight-color
+	color mix(#fff, highlight-color, 80%)
+
+	button
+		color mix(#fff, highlight-color, 80%)
+
+	button:hover
+		color #fff
+
+.sweet-alert
+	background-color box-bg
+
+	h2
+		color #fff
+
+	input
+		border-color mix(#fff, chat-bg, 4%)
+		color box-fg
+
+		&:focus
+			border-color highlight-color
+			box-shadow none
+			color #eee
+
+	button.confirm
+		background-color button-bg !important
+		color button-fg
+
+	button.cancel
+		background-color button-cancel-bg
+		color button-cancel-fg
+
 // Inputs.
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
 	background-color mix(#000, chat-bg, 10%) !important

@@ -666,6 +666,39 @@ pre {
   color: #fff;
   background-color: #1a5066;
 }
+.background-component-color {
+  background-color: #1a5066;
+  color: #d1dce0;
+}
+.background-component-color button {
+  color: #d1dce0;
+}
+.background-component-color button:hover {
+  color: #fff;
+}
+.sweet-alert {
+  background-color: #2e3136;
+}
+.sweet-alert h2 {
+  color: #fff;
+}
+.sweet-alert input {
+  border-color: #3e4045;
+  color: #888;
+}
+.sweet-alert input:focus {
+  border-color: #1a5066;
+  box-shadow: none;
+  color: #eee;
+}
+.sweet-alert button.confirm {
+  background-color: #7289da !important;
+  color: #e2e7f7;
+}
+.sweet-alert button.cancel {
+  background-color: #bc2031;
+  color: #f1d2d5;
+}
 input[readonly],
 input[disabled],
 textarea[readonly],
