@@ -167,7 +167,7 @@ a:hover {
   border-bottom: 1px solid #1c1e22;
 }
 .account-box .info h4 {
-  color: #eee;
+  color: #eaeaea;
 }
 .account-box .info.status-online .thumb:after,
 .popup-user-status-online {
@@ -183,9 +183,6 @@ a:hover {
 .popup-user-status-busy {
   background-color: #f04747;
   border-color: #ee2a2a;
-}
-.hover .account-box .info h4 {
-  color: #fff;
 }
 .status-offline,
 .icon-at.status-offline {
@@ -220,9 +217,19 @@ a:hover {
 .side-nav .header {
   background-color: #292c31;
 }
+.side-nav .header.hover .account-box .info h4,
+.side-nav .header:hover .account-box .info h4 {
+  color: #fff;
+}
 .side-nav > .arrow:before,
 .side-nav > .arrow:after {
   background-color: #888;
+}
+.side-nav > .arrow:hover:before,
+.side-nav > .arrow:hover:after,
+.side-nav > .arrow.hover:before,
+.side-nav > .arrow.hover:after {
+  background-color: #acacac;
 }
 .side-nav h3 {
   font-weight: 700;

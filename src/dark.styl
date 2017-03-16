@@ -201,7 +201,7 @@ a
 		border-bottom 1px solid #1c1e22
 
 		h4
-			color #eee
+			color #eaeaea
 
 // Color of the online dot next to the profile picture and in popups.
 .account-box .info.status-online .thumb:after,
@@ -218,9 +218,6 @@ a
 .popup-user-status-busy
 	background-color busy
 	border-color darken(busy, 10%)
-
-.hover .account-box .info h4
-	color #fff
 
 .status-offline, .icon-at.status-offline
 	color mix(chat-bg, #fff, 25%)
@@ -255,9 +252,17 @@ a
 	.header
 		background-color darken(sidebar-bg, 10%)
 
+	.header.hover, .header:hover
+		.account-box .info h4
+			color #fff
+
 	> .arrow
 		&:before, &:after
-			background-color #888
+			background-color box-fg
+
+	> .arrow:hover:before, > .arrow:hover:after,
+	> .arrow.hover:before, > .arrow.hover:after
+			background-color lighten(box-fg, 30%)
 
 	h3
 		font-weight 700
