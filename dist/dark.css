@@ -347,6 +347,10 @@ a:hover {
 .flex-nav .content {
   background-color: #2e3136;
 }
+.flex-nav .content h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
 .flex-nav footer {
   background-color: #292c31;
 }
@@ -532,9 +536,6 @@ blockquote:before {
 .emoji-picker {
   background-color: #2e3136;
 }
-.emoji-picker .input-line.search input {
-  border-radius: 0;
-}
 .emoji-picker .emojis .emoji-list li:hover {
   background-color: #7a7a7a;
 }
@@ -686,6 +687,22 @@ pre {
 .toolbar-search__buttons i:hover {
   color: #acacac;
 }
+.input-line > span,
+.input-line > label,
+.flex-nav .input-line label {
+  display: block;
+  margin-bottom: 7px;
+}
+.input.checkbox.toggle label:before {
+  background-color: #bc2031;
+}
+.input.checkbox.toggle label:hover:before {
+  background-color: #a91d2c;
+}
+.input.checkbox.toggle input:checked + label:before,
+.flex-nav .input.checkbox.toggle input:checked + label:before {
+  background-color: #43b581;
+}
 .background-component-color {
   background-color: #1a5066;
   color: #d1dce0;
@@ -748,13 +765,19 @@ textarea[disabled] {
 ::-webkit-scrollbar-thumb {
   background-color: #2e3136;
 }
-.-autocomplete-container {
+.-autocomplete-container,
+.flex-nav .-autocomplete-container {
   background-color: #2e3136;
+  border-color: #292c31;
+  border-radius: 3px;
+  overflow: auto;
 }
-.-autocomplete-item {
+.-autocomplete-item,
+.flex-nav .-autocomplete-item {
   border-color: #292c31;
 }
-.-autocomplete-item.selected {
+.-autocomplete-item.selected,
+.flex-nav .-autocomplete-item.selected {
   background-color: #1a5066;
 }
 .full-page {

@@ -38,18 +38,23 @@
 .role-tag[data-role="Admin"]
 	display none !important
 
+highlight-color = #1a5066
+danger-color = #bc2031
+green-color = #43b581
+purple-color = #7289da
+
 // Buttons.
-button-bg = #7289da
+button-bg = purple-color
 button-fg = mix(button-bg, #ffffff, 20%)
-button-cancel-bg = #bc2031
+button-cancel-bg = danger-color
 button-cancel-fg = mix(button-cancel-bg, #ffffff, 20%)
 button-secondary-bg = #eee
 button-secondary-fg = #444
 
-anchor-fg = button-bg
+anchor-fg = purple-color
 
 // Role tags, bot tags.
-tag-bg = button-bg
+tag-bg = purple-color
 
 // Code blocks, blockquotes, popups.
 box-bg = #2e3136
@@ -66,9 +71,6 @@ busy = #f04747
 // Main chat area.
 chat-bg = #36393e
 chat-fg = mix(#fff, chat-bg, 70%)
-
-loading-dots = #888
-highlight-color = #1a5066
 
 body
 	color chat-fg
@@ -144,7 +146,7 @@ body
 
 // Loading dots.
 .loading > div
-	background-color loading-dots
+	background-color box-fg
 
 // Anchor color.
 a
@@ -388,6 +390,10 @@ a
 	.content
 		background-color sidebar-bg
 
+		h4
+			font-weight 700
+			margin-bottom 15px
+
 	footer
 		background-color darken(sidebar-bg, 10%)
 
@@ -580,9 +586,6 @@ blockquote:before
 .emoji-picker
 	background-color box-bg
 
-	.input-line.search input
-		border-radius 0
-
 	.emojis .emoji-list li:hover
 		background-color darken(box-fg, 10%)
 
@@ -738,6 +741,24 @@ pre
 	&:hover
 		color lighten(box-fg, 30%)
 
+.input-line > span, .input-line > label,
+.flex-nav .input-line label
+	display block
+	margin-bottom 7px
+
+// Toggle checkbox.
+.input.checkbox.toggle
+	label:before
+		background-color danger-color
+
+	label:hover:before
+		background-color darken(danger-color, 10%)
+
+.input.checkbox.toggle,
+.flex-nav .input.checkbox.toggle
+	input:checked + label:before
+		background-color green-color
+
 // Upload bar. (And others?)
 .background-component-color
 	background-color highlight-color
@@ -803,13 +824,19 @@ placeholder = #888
 	background-color box-bg
 
 // Autocomplete.
-.-autocomplete-container
+.-autocomplete-container,
+.flex-nav .-autocomplete-container
 	background-color box-bg
+	border-color darken(box-bg, 10%)
+	border-radius 3px
+	overflow auto
 
-.-autocomplete-item
+.-autocomplete-item,
+.flex-nav .-autocomplete-item
 	border-color darken(box-bg, 10%)
 
-.-autocomplete-item.selected
+.-autocomplete-item.selected,
+.flex-nav .-autocomplete-item.selected
 	background-color highlight-color
 
 .full-page
