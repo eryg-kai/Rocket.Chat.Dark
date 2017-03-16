@@ -652,7 +652,8 @@ pre {
 .container-bars .unread-bar {
   background-color: #1a5066;
 }
-.message-popup {
+.message-popup,
+.message-popup.search-results-list {
   background-color: #2e3136;
   color: #888;
 }
@@ -665,6 +666,18 @@ pre {
 .popup-item.selected {
   color: #fff;
   background-color: #1a5066;
+}
+.message-popup.search-results-list {
+  height: 100vh;
+}
+.toolbar-search__input {
+  padding: 2px 15px !important;
+}
+.toolbar-search__buttons i {
+  color: #888;
+}
+.toolbar-search__buttons i:hover {
+  color: #acacac;
 }
 .background-component-color {
   background-color: #1a5066;

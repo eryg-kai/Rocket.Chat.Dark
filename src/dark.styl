@@ -202,6 +202,7 @@ a
 
 		h4
 			color #eee
+
 // Color of the online dot next to the profile picture and in popups.
 .account-box .info.status-online .thumb:after,
 .popup-user-status-online
@@ -704,7 +705,7 @@ pre
 	background-color highlight-color
 
 // Popups.
-.message-popup
+.message-popup, .message-popup.search-results-list
 	background-color box-bg
 	color box-fg
 
@@ -717,6 +718,20 @@ pre
 .popup-item.selected
 	color #fff
 	background-color highlight-color
+
+// Search popup.
+.message-popup.search-results-list
+	height 100vh
+
+// The search input that brings up the search popup.
+.toolbar-search__input
+	padding 2px 15px !important
+
+.toolbar-search__buttons i
+	color box-fg
+
+	&:hover
+		color lighten(box-fg, 30%)
 
 // Upload bar. (And others?)
 .background-component-color
