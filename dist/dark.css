@@ -733,6 +733,9 @@ pre {
 .sweet-alert {
   background-color: #2e3136;
 }
+.sweet-alert p {
+  color: #888;
+}
 .sweet-alert h2 {
   color: #fff;
 }
