@@ -46,30 +46,41 @@ body {
 .button,
 .button.clean,
 .side-nav .button,
-.button.primary {
+.button.primary,
+.sweet-alert button.confirm {
   background-color: #7289da;
   color: #e2e7f7;
 }
 .button[disabled],
 .button.clean[disabled],
 .side-nav .button[disabled],
-.button.primary[disabled] {
+.button.primary[disabled],
+.sweet-alert button.confirm[disabled] {
   background-color: #54618c;
   color: #8c909a;
 }
 .button:hover,
 .button.clean:hover,
 .side-nav .button:hover,
-.button.primary:hover {
+.button.primary:hover,
+.sweet-alert button.confirm:hover {
   color: #e2e7f7;
   background-color: #5873d3;
+}
+.sweet-alert button.confirm {
+  background-color: #7289da !important;
+  box-shadow: none !important;
+}
+.sweet-alert button.confirm:hover {
+  background-color: #5873d3 !important;
 }
 .button.cancel-direct-message,
 .button.cancel-channel,
 .button.delete,
 .button.remove,
 .button.red,
-.button.danger {
+.button.danger,
+.sweet-alert button.cancel {
   background-color: #bc2031;
   color: #f1d2d5;
 }
@@ -78,7 +89,8 @@ body {
 .button.delete[disabled],
 .button.remove[disabled],
 .button.red[disabled],
-.button.danger[disabled] {
+.button.danger[disabled],
+.sweet-alert button.cancel[disabled] {
   background-color: #792c37;
   color: #938589;
 }
@@ -87,9 +99,10 @@ body {
 .button.delete:hover,
 .button.remove:hover,
 .button.red:hover,
-.button.danger:hover {
-  color: #e2e7f7;
+.button.danger:hover,
+.sweet-alert button.cancel:hover {
   background-color: #a91d2c;
+  color: #e2e7f7;
 }
 .color-error-contrast {
   color: #f1d2d5;
@@ -731,14 +744,6 @@ pre {
   border-color: #1a5066;
   box-shadow: none;
   color: #eee;
-}
-.sweet-alert button.confirm {
-  background-color: #7289da !important;
-  color: #e2e7f7;
-}
-.sweet-alert button.cancel {
-  background-color: #bc2031;
-  color: #f1d2d5;
 }
 input[readonly],
 input[disabled],

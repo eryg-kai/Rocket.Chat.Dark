@@ -91,7 +91,8 @@ body
 .button,
 .button.clean,
 .side-nav .button,
-.button.primary
+.button.primary,
+.sweet-alert button.confirm
 	background-color button-bg
 	color button-fg
 
@@ -103,12 +104,21 @@ body
 		color button-fg
 		background-color darken(button-bg, 10%)
 
+// This needs !important to override the inline styling.
+.sweet-alert button.confirm
+	background-color button-bg !important
+	box-shadow none !important
+
+	&:hover
+		background-color darken(button-bg, 10%) !important
+
 .button.cancel-direct-message,
 .button.cancel-channel,
 .button.delete,
 .button.remove,
 .button.red,
-.button.danger
+.button.danger,
+.sweet-alert button.cancel
 	background-color button-cancel-bg
 	color button-cancel-fg
 
@@ -117,8 +127,8 @@ body
 		color mix(chat-bg, button-cancel-fg, 50%)
 
 	&:hover
-		color button-fg
 		background-color darken(button-cancel-bg, 10%)
+		color button-fg
 
 .color-error-contrast
 	color button-cancel-fg
@@ -789,14 +799,6 @@ pre
 			border-color highlight-color
 			box-shadow none
 			color #eee
-
-	button.confirm
-		background-color button-bg !important
-		color button-fg
-
-	button.cancel
-		background-color button-cancel-bg
-		color button-cancel-fg
 
 // Inputs.
 input[readonly], input[disabled], textarea[readonly], textarea[disabled]
