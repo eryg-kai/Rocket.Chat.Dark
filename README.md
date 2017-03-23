@@ -13,11 +13,12 @@ A dark Discord-inspired theme for Rocket.Chat
 2. `npm run deploy`
 
 ### Custom additions
-Custom styling that can't or shouldn't be in source control goes in
-`src/custom.styl`. If you use this, you'll need to run the build or development
-steps below and copy `dist/custom.css` to Rocket.Chat instead of `dist/dark.css`
-(if you run deploy, it will automatically choose the custom file if it exists).
+Custom styling that can't or shouldn't be in source control goes in `src/custom.styl`.
 **`src/custom.styl` should have `@import "dark"` as the first line.**
+
+If you use this, you'll need to run the build or development steps below and copy
+`dist/custom.css` to Rocket.Chat instead of `dist/dark.css`. If you use deploy instead,
+it will automatically choose the custom file if it exists.
 
 For example, I use this to color the names of specific users. My
 `src/custom.styl` looks something like this:
