@@ -755,6 +755,11 @@ pre {
 .sweet-alert .sa-icon.sa-success .sa-fix {
   background-color: #2e3136;
 }
+.alert-warning {
+  background-color: #bc2031;
+  border: none;
+  color: #f1d2d5;
+}
 input[readonly],
 input[disabled],
 textarea[readonly],
