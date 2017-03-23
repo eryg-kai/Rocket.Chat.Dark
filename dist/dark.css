@@ -37,6 +37,9 @@ body {
 .secondary-font-color {
   color: #fff;
 }
+.color-tertiary-font-color {
+  color: #c2c3c5;
+}
 #rocket-chat .main-content {
   background-color: #36393e;
 }
