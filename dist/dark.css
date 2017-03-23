@@ -765,9 +765,9 @@ pre {
   background-color: #2e3136;
 }
 .alert-warning {
-  background-color: #bc2031;
+  background-color: #faa61a;
   border: none;
-  color: #f1d2d5;
+  color: #7d530d;
 }
 input[readonly],
 input[disabled],
