@@ -877,22 +877,30 @@ placeholder = #888
 	background-color box-bg
 	color box-fg
 
-	.input-text
+	.input-line
+		label
+			margin-left 0
+
 		input, select
-			border-color mix(#fff, chat-bg, 4%)
+			border-color mix(#fff, box-bg, 8%)
+			color box-fg
+			padding-left 0
+			padding-right 0
 
 			&.error
-				border-color busy
+				border-color danger-color
 
 		.input-error
-			color mix(busy, box-bg, 80%)
+			color danger-color
 			padding 0
-			margin-top 5px
+			margin-top 7px
 
-	.submit, .register, .forgot-password,
-	.back-to-login, .register-link-replacement
+	.submit, .register, .forgot-password, .back-to-login
 		&:hover
 			color #eee
+
+.register-link-replacement
+	margin-top 15px
 
 // CodeMirror color fix.
 .hljs-keyword,

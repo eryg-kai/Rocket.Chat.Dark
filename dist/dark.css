@@ -820,25 +820,33 @@ textarea[disabled] {
   background-color: #2e3136;
   color: #888;
 }
-#login-card .input-text input,
-#login-card .input-text select {
-  border-color: #3e4045;
+#login-card .input-line label {
+  margin-left: 0;
 }
-#login-card .input-text input.error,
-#login-card .input-text select.error {
-  border-color: #f04747;
+#login-card .input-line input,
+#login-card .input-line select {
+  border-color: #3e4146;
+  color: #888;
+  padding-left: 0;
+  padding-right: 0;
 }
-#login-card .input-text .input-error {
-  color: #c94243;
+#login-card .input-line input.error,
+#login-card .input-line select.error {
+  border-color: #bc2031;
+}
+#login-card .input-line .input-error {
+  color: #bc2031;
   padding: 0;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 #login-card .submit:hover,
 #login-card .register:hover,
 #login-card .forgot-password:hover,
-#login-card .back-to-login:hover,
-#login-card .register-link-replacement:hover {
+#login-card .back-to-login:hover {
   color: #eee;
+}
+.register-link-replacement {
+  margin-top: 15px;
 }
 .hljs-keyword,
 .css .rule .hljs-keyword,
