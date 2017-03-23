@@ -34,6 +34,9 @@ body {
 .color-primary-font-color {
   color: #c2c3c5;
 }
+.secondary-font-color {
+  color: #fff;
+}
 #rocket-chat .main-content {
   background-color: #36393e;
 }
@@ -965,9 +968,6 @@ form.inline select {
 .page-list .list .user-image .avatar:after {
   left: -16px;
 }
-.rocket-form .submit {
-  padding: 0 20px;
-}
 .page-settings .content .section h1 {
   margin: 0;
   padding: 0;
@@ -1038,7 +1038,7 @@ form.inline select {
   background-color: transparent;
 }
 .page-container .content {
-  padding: 25px 40px;
+  padding: 25px 25px;
 }
 .page-container h3 {
   margin-bottom: 10px;
