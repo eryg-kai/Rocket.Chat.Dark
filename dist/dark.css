@@ -598,10 +598,16 @@ blockquote:before {
 .emoji-picker-icon {
   color: #666;
 }
-code {
+code,
+.code-colors {
   background-color: #2e3136;
   border-color: #2c2f33;
-  color: #888;
+  border-radius: 2px;
+  color: #c2c3c5;
+  font-weight: 400;
+}
+code.inline {
+  padding: 0.15em 0.5em;
 }
 pre {
   display: block;

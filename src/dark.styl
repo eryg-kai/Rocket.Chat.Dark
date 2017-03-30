@@ -644,10 +644,15 @@ blockquote:before
 .emoji-picker-icon
 	color #666
 
-code
+code, .code-colors
 	background-color box-bg
 	border-color darken(box-bg, 5%)
-	color box-fg
+	border-radius 2px
+	color chat-fg
+	font-weight 400
+
+code.inline
+	padding 0.15em 0.5em
 
 pre
 	display block
