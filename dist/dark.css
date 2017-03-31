@@ -17,9 +17,6 @@
 .formatting-tips {
   display: none !important;
 }
-.messages-container footer {
-  min-height: 57px !important;
-}
 .full-page .logo > img,
 .login-terms {
   display: none !important;
@@ -308,6 +305,9 @@ a:hover {
 .side-nav ul li.has-alert .icon-hash {
   color: #3bb5e5 !important;
 }
+.main-content .loading-animation > div {
+  background-color: #c2c3c5;
+}
 .main-content header {
   border-bottom: 1px solid #313338;
   background-color: #36393e;
@@ -320,28 +320,11 @@ a:hover {
 }
 .messages-container .footer {
   background-color: #36393e;
-  border-top: 1px solid #424449;
-  box-shadow: 0 -1px 2px -1px rgba(0,0,0,0.5);
-  padding-top: 23px;
-  padding-bottom: 23px;
-  min-height: 90px;
-  position: relative;
-}
-.messages-container .message-form {
-  margin-bottom: 0;
+  padding-top: 12px;
 }
 .messages-container .message-form .stream-info {
-  background-color: #36393e;
-  position: absolute;
-}
-.messages-container .message-form > .message-input .input-message-container .inner-left-toolbar {
-  top: 11px;
-}
-.messages-container .message-form .formatting-tips {
-  color: #fff;
-}
-.messages-container .message-form .formatting-tips a {
-  font-weight: 700;
+  color: #888;
+  height: 23px;
 }
 .messages-container .message-form textarea {
   background-color: #424449;
@@ -472,6 +455,10 @@ input[type="button"] {
 }
 .message .message-dropdown ul li:hover {
   background-color: #292c31;
+}
+.messages-box {
+  border-bottom: 1px solid #303337;
+  box-shadow: 0 1px 2px -1px #424449;
 }
 .messages-box .start {
   color: #888;

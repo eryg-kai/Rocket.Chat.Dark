@@ -26,8 +26,6 @@
 // I don't want the formatting tips.
 .formatting-tips
 	display none !important
-.messages-container footer
-	min-height 57px !important
 
 // These too.
 .full-page .logo > img
@@ -342,10 +340,15 @@ a
 		.name, .icon-lock, .icon-hash
 			color online !important
 
-// The main bar that goes above the chat area.
-.main-content header
-	border-bottom 1px solid darken(chat-bg, 10%)
-	background-color chat-bg
+.main-content
+	// Loading dots.
+	.loading-animation > div
+		background-color chat-fg
+
+	// The main bar that goes above the chat area.
+	header
+		border-bottom 1px solid darken(chat-bg, 10%)
+		background-color chat-bg
 
 .button.join
 	margin-left 10px
@@ -356,29 +359,12 @@ a
 
 	.footer
 		background-color chat-bg
-		border-top 1px solid mix(#fff, chat-bg, 6%)
-		box-shadow 0 -1px 2px -1px rgba(0, 0, 0, 0.5)
-		padding-top 23px
-		padding-bottom 23px
-		min-height 90px
-		position relative
+		padding-top 12px
 
 	.message-form
-		margin-bottom 0
-
 		.stream-info
-			background-color chat-bg
-			position absolute
-
-		> .message-input .input-message-container .inner-left-toolbar
-			top 11px
-
-		// Help underneath the chat input that shows how to format text.
-		.formatting-tips
-			color #fff
-
-			a
-				font-weight 700
+			color box-fg
+			height 23px
 
 		// Chat input.
 		textarea
@@ -514,13 +500,18 @@ input[type="button"]
 	100%
 		background none
 
-// "Start of conversation" message.
-.messages-box .start
-	color #888
-	text-transform uppercase
-	font-weight 700
-	font-size 12px
-	margin 12px 0 13px 0
+.messages-box
+	// Border to separate from footer.
+	border-bottom 1px solid mix(#000, chat-bg, 10%)
+	box-shadow 0 1px 2px -1px mix(#fff, chat-bg, 6%)
+
+	// "Start of conversation" message.
+	.start
+		color #888
+		text-transform uppercase
+		font-weight 700
+		font-size 12px
+		margin 12px 0 13px 0
 
 // The new day divider with the date of that day.
 .message.new-day
