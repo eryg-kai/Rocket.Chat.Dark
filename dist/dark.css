@@ -478,7 +478,7 @@ input[type="button"] {
   top: 13px;
 }
 .message.new-day:after {
-  border-color: #54565a;
+  border-color: #3e4045;
   top: 23px;
 }
 select {
