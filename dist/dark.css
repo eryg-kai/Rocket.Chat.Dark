@@ -972,6 +972,12 @@ form.inline select {
 .page-list .list .user-image .avatar:after {
   left: -16px;
 }
+.page-settings a {
+  color: #7289da;
+}
+.page-settings a:hover {
+  color: #5873d3;
+}
 .page-settings .content .section h1 {
   margin: 0;
   padding: 0;
@@ -1030,13 +1036,11 @@ form.inline select {
   border: none;
 }
 .admin-integrations-new-panel .admin-integrations-new-item {
-  color: #aaa;
+  color: #c2c3c5;
+  border-color: #42454a;
 }
 .admin-integrations-new-panel .admin-integrations-new-item:hover {
   background-color: #292c31;
-}
-.new-role {
-  margin-bottom: 20px;
 }
 .page-container {
   background-color: transparent;
@@ -1141,69 +1145,70 @@ form.inline select {
 .cm-s-default .CodeMirror-gutters {
   background: #25272b;
 }
-.hljs {
+.hljs,
+.code-colors.hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
   color: #abb2bf;
   background: #282c34;
 }
-.hljs-comment,
-.hljs-quote {
+.hljs .hljs-comment,
+.hljs .hljs-quote {
   color: #5c6370;
   font-style: italic;
 }
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
+.hljs .hljs-doctag,
+.hljs .hljs-keyword,
+.hljs .hljs-formula {
   color: #c678dd;
 }
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
+.hljs .hljs-section,
+.hljs .hljs-name,
+.hljs .hljs-selector-tag,
+.hljs .hljs-deletion,
+.hljs .hljs-subst {
   color: #e06c75;
 }
-.hljs-literal {
+.hljs .hljs-literal {
   color: #56b6c2;
 }
-.hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
+.hljs .hljs-string,
+.hljs .hljs-regexp,
+.hljs .hljs-addition,
+.hljs .hljs-attribute,
+.hljs .hljs-meta-string {
   color: #98c379;
 }
-.hljs-built_in,
-.hljs-class .hljs-title {
+.hljs .hljs-built_in,
+.hljs .hljs-class .hljs-title {
   color: #e6c07b;
 }
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
+.hljs .hljs-attr,
+.hljs .hljs-variable,
+.hljs .hljs-template-variable,
+.hljs .hljs-type,
+.hljs .hljs-selector-class,
+.hljs .hljs-selector-attr,
+.hljs .hljs-selector-pseudo,
+.hljs .hljs-number {
   color: #d19a66;
 }
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
+.hljs .hljs-symbol,
+.hljs .hljs-bullet,
+.hljs .hljs-link,
+.hljs .hljs-meta,
+.hljs .hljs-selector-id,
+.hljs .hljs-title {
   color: #61aeee;
 }
-.hljs-emphasis {
+.hljs .hljs-emphasis {
   font-style: italic;
 }
-.hljs-strong {
+.hljs .hljs-strong {
   font-weight: bold;
 }
-.hljs-link {
+.hljs .hljs-link {
   text-decoration: underline;
 }
 @-moz-keyframes highlight {

@@ -102,6 +102,12 @@ form.inline
 				left -16px
 
 .page-settings
+	a
+		color anchor-fg
+
+	a:hover
+		color darken(anchor-fg, 10%)
+
 	.content .section h1
 		margin 0
 		padding 0
@@ -160,13 +166,11 @@ form.inline
 	border none
 
 .admin-integrations-new-panel .admin-integrations-new-item
-	color #aaa
+	color chat-fg
+	border-color mix(#fff, box-bg, 10%)
 
 	&:hover
 		background-color darken(box-bg, 10%)
-
-.new-role
-	margin-bottom 20px
 
 .page-container
 	background-color transparent
