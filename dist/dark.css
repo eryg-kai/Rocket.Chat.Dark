@@ -765,7 +765,8 @@ pre {
 input[readonly],
 input[disabled],
 textarea[readonly],
-textarea[disabled] {
+textarea[disabled],
+select[disabled] {
   background-color: #303337 !important;
 }
 ::-webkit-input-placeholder {
