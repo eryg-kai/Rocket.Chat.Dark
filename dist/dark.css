@@ -542,6 +542,12 @@ blockquote:before {
   color: #949494;
   border-color: #292c31;
 }
+.message a[class^="icon-"] {
+  color: #888;
+}
+.message a[class^="icon-"]:hover {
+  color: #949494;
+}
 .emoji-picker {
   background-color: #2e3136;
 }
