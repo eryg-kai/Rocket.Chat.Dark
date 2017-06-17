@@ -339,13 +339,15 @@ a:hover {
   border: none;
 }
 .messages-container .message-form > .message-input > .file,
-.messages-container .message-form > .message-input .message-buttons {
+.messages-container .message-form > .message-input > .share-items > .message-buttons,
+.messages-container .message-form > .message-input > .message-buttons {
   background-color: #2e3136;
   border: 1px solid #292c31;
   color: #888;
 }
 .messages-container .message-form > .message-input > .file:hover,
-.messages-container .message-form > .message-input .message-buttons:hover {
+.messages-container .message-form > .message-input > .share-items > .message-buttons:hover,
+.messages-container .message-form > .message-input > .message-buttons:hover {
   background-color: #292c31;
   color: #949494;
 }
