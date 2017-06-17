@@ -718,14 +718,17 @@ pre {
 .flex-nav .input.checkbox.toggle input:checked + label:before {
   background-color: #43b581;
 }
-.background-component-color {
+.background-component-color,
+.upload-progress-progress {
   background-color: #1a5066;
   color: #d1dce0;
 }
-.background-component-color button {
+.background-component-color button,
+.upload-progress-progress button {
   color: #d1dce0;
 }
-.background-component-color button:hover {
+.background-component-color button:hover,
+.upload-progress-progress button:hover {
   color: #fff;
 }
 .background-primary-action-color {
