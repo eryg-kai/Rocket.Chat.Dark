@@ -344,6 +344,7 @@ a:hover {
   background-color: #2e3136;
   border: 1px solid #292c31;
   color: #888;
+  height: auto;
 }
 .messages-container .message-form > .message-input > .file:hover,
 .messages-container .message-form > .message-input > .share-items > .message-buttons:hover,
