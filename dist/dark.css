@@ -352,6 +352,9 @@ a:hover {
   background-color: #292c31;
   color: #949494;
 }
+.messages-container .message-form .users-typing {
+  background-color: transparent;
+}
 .flex-nav .content {
   background-color: #2e3136;
 }
