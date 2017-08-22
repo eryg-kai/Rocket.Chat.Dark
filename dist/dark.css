@@ -650,6 +650,7 @@ pre {
 }
 .side-nav .unread {
   background-color: #387791;
+  border: none;
   color: #fff;
 }
 .first-unread .body::before {
