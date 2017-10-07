@@ -1,4 +1,3 @@
-# Rocket.Chat.Dark
 A dark Discord-inspired theme for Rocket.Chat
 
 ## Install
@@ -50,3 +49,6 @@ background color this theme uses (recommended), set it to `#36393e`.
 1. `npm install`
 2. `npm run watch`
 3. Edit source in `src`
+
+## Screenshots
+![Rocket.Chat.Dark screenshot](https://www.0x0049.com/static/screenshots/rocket.chat.dark.png)
