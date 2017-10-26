@@ -499,27 +499,39 @@ select {
 .flex-tab-bar .tab-button.active {
   background-color: #202226;
 }
-.flex-tab {
+.flex-tab-container .flex-tab {
   background-color: #292c31;
 }
-.flex-tab .content {
+.flex-tab-container .flex-tab .close-flex-tab > span {
+  background-color: transparent;
+}
+.flex-tab-container .flex-tab .close-flex-tab > span > i {
+  border: none;
+  color: #c2c3c5;
+  font-size: 15px;
+  transition: color 100ms ease-in-out;
+}
+.flex-tab-container .flex-tab .close-flex-tab > span > i:hover {
+  color: #fff;
+}
+.flex-tab-container .flex-tab .content {
   background-color: #292c31;
   box-shadow: -1px 0 3px 0 rgba(0,0,0,0.2);
 }
-.flex-tab .content > div {
+.flex-tab-container .flex-tab .content > div {
   background-color: #292c31;
 }
-.flex-tab .control {
+.flex-tab-container .flex-tab .control {
   background-color: transparent;
 }
-.flex-tab .day-divider {
+.flex-tab-container .flex-tab .day-divider {
   color: #777;
   background-color: #292c31;
 }
-.flex-tab .day-divider:before {
+.flex-tab-container .flex-tab .day-divider:before {
   border-bottom-color: rgba(255,255,255,0.06);
 }
-.flex-tab .day-divider span {
+.flex-tab-container .flex-tab .day-divider span {
   background-color: #292c31;
 }
 .message .day-divider {

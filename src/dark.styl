@@ -548,28 +548,41 @@ select
 	.tab-button.active
 		background-color darken(sidebar-bg, 30%)
 
-.flex-tab
-	background-color darken(sidebar-bg, 10%)
-
-	.content
-		background-color darken(sidebar-bg, 10%)
-		box-shadow -1px 0 3px 0 rgba(0, 0, 0, 0.2)
-
-		> div
-			background-color darken(sidebar-bg, 10%)
-
-	.control
-		background-color transparent
-
-	.day-divider
-		color #777
+.flex-tab-container
+	.flex-tab
 		background-color darken(sidebar-bg, 10%)
 
-		&:before
-			border-bottom-color rgba(255, 255, 255, 0.06)
+		.close-flex-tab > span
+			background-color transparent
 
-		span
+			> i
+				border none
+				color chat-fg
+				font-size 15px
+				transition color 100ms ease-in-out
+
+				&:hover
+					color #fff
+
+		.content
 			background-color darken(sidebar-bg, 10%)
+			box-shadow -1px 0 3px 0 rgba(0, 0, 0, 0.2)
+
+			> div
+				background-color darken(sidebar-bg, 10%)
+
+		.control
+			background-color transparent
+
+		.day-divider
+			color #777
+			background-color darken(sidebar-bg, 10%)
+
+			&:before
+				border-bottom-color rgba(255, 255, 255, 0.06)
+
+			span
+				background-color darken(sidebar-bg, 10%)
 
 .message .day-divider
 	height 40px
