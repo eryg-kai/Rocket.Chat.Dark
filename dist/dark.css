@@ -524,6 +524,9 @@ select {
 .flex-tab-container .flex-tab .control {
   background-color: transparent;
 }
+.flex-tab-container .flex-tab .message.new-day:before {
+  background-color: #292c31;
+}
 .flex-tab-container .flex-tab .day-divider {
   color: #777;
   background-color: #292c31;
