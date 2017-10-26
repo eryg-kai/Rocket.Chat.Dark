@@ -922,6 +922,7 @@ select[disabled] {
 .permissions-manager .permission-grid,
 .statistics-table,
 .page-list .list table {
+  background-color: #292c31;
   border: 1px solid #292c31;
 }
 .permissions-manager .permission-grid thead,
@@ -1026,10 +1027,6 @@ form.inline select {
 .page-settings .section .section-content .input-line {
   border-color: #3e4045;
 }
-.page-settings .section .section-content .input-line .settings-alert {
-  background-color: #f04747;
-  border-color: #ee2a2a;
-}
 .page-settings .section .section-content .input-line input {
   background-color: #424449;
   color: #bbb;
@@ -1068,6 +1065,38 @@ form.inline select {
 }
 .page-container h3 {
   margin-bottom: 10px;
+}
+.pending-background {
+  background-color: #fbc05e;
+  border-color: #fbb747;
+  color: #7f5f2a;
+}
+.pending-background > .icon-attention {
+  color: #7f5f2a;
+}
+.range-slider-range {
+  background-color: #3a3d42;
+  border-color: #3a3d42;
+}
+.range-slider-range::-webkit-slider-thumb {
+  background-color: #1a5066;
+}
+.range-slider-range::-webkit-slider-thumb:hover,
+.range-slider-range::-webkit-slider-thumb:active {
+  background-color: #17485c;
+}
+.range-slider-range::-moz-range-thumb {
+  background-color: #1a5066;
+}
+.range-slider-range::-moz-range-thumb:hover,
+.range-slider-range::-moz-range-thumb:active {
+  background-color: #17485c;
+}
+.range-slider-value {
+  background-color: #1a5066;
+}
+.range-slider-value:after {
+  border-right-color: #1a5066;
 }
 .cm-s-default.CodeMirror {
   background: #151515;

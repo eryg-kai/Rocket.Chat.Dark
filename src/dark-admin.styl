@@ -43,6 +43,7 @@ box-bg = #2e3136
 .permissions-manager .permission-grid,
 .statistics-table,
 .page-list .list table
+	background-color darken(box-bg, 10%)
 	border 1px solid darken(box-bg, 10%)
 
 	thead
@@ -138,10 +139,6 @@ form.inline
 			.input-line
 				border-color mix(#fff, chat-bg, 4%)
 
-				.settings-alert
-					background-color busy
-					border-color darken(busy, 10%)
-
 				input
 					background-color mix(#fff, chat-bg, 6%)
 					color #bbb
@@ -180,6 +177,38 @@ form.inline
 
 	h3
 		margin-bottom 10px
+
+// Alerts.
+.pending-background
+	background-color mix(#fff, warning-color, 30%)
+	border-color mix(#fff, warning-color, 20%)
+	color mix(box-bg, warning-color, 60%)
+
+	> .icon-attention
+		color mix(box-bg, warning-color, 60%)
+
+// Slider.
+.range-slider-range
+	background-color mix(#fff, box-bg, 6%)
+	border-color mix(#fff, box-bg, 6%)
+
+	&::-webkit-slider-thumb
+		background-color highlight-color
+
+		&:hover, &:active
+			background-color darken(highlight-color, 10%)
+
+	&::-moz-range-thumb
+		background-color highlight-color
+
+		&:hover, &:active
+			background-color darken(highlight-color, 10%)
+
+.range-slider-value
+	background-color highlight-color
+
+	&:after
+		border-right-color highlight-color
 
 @import "base16"
 
