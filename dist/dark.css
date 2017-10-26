@@ -482,6 +482,7 @@ input[type="button"] {
   color: #54565a;
   background-color: #36393e;
   top: 13px;
+  z-index: 2;
 }
 .message.new-day:after {
   border-color: #3e4045;
