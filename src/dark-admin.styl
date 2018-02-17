@@ -1,196 +1,70 @@
-box-bg = #2e3136
+.rc-old .page-settings .section,
+.rc-old .page-container table
+	background-color component-bg
 
-.settings-description
-	color chat-fg
+.rc-old .page-settings .section
+	border none
 
-.logoutOthers, .select-service
-	margin-top 15px
+.rc-old .page-container table
+	margin-top 10px
 
-.avatar-suggestion-item,
-.page-static .content .section .section-content
-.page-settings .content .section
-	border-color darken(box-bg, 5%)
-	background-color box-bg
-	color #aaa
+	.admin-table-row, th
+		background-color transparent
 
-	.avatar
-		background-color darken(box-bg, 15%)
-
-.permissions-manager .permission-grid tbody,
-.statistics-table,
-.page-list .list table tbody
-	tr
-		background-color lighten(box-bg, 5%) !important
-
-		th
-			border none
-			background-color transparent !important
-			color chat-fg
-			font-weight 400
-
-		td
-			border none
-			padding 10px
-			background-color transparent !important
-			color chat-fg
-
-	tr:nth-of-type(even)
-		background-color darken(box-bg, 5%) !important
+	th, td
+		border none
 
 	tr:hover
-		background-color highlight-color !important
-
-.permissions-manager .permission-grid,
-.statistics-table,
-.page-list .list table
-	background-color darken(box-bg, 10%)
-	border 1px solid darken(box-bg, 10%)
+		th
+			background-color mix(component-bg, highlight-color, 40%)
+		td
+			background-color mix(component-bg, highlight-color, 20%)
 
 	thead
-		font-weight 700
-		padding 10px
+		th, td
+			background-color transparent !important
 
-		.icon-edit
-			display none
+:root:root
+	--flex-nav-background sidebar-bg
+	--sidebar-background-light sidebar-bg
+	--sidebar-background-light-hover darken(sidebar-bg, 15%)
 
-		a
-			color chat-fg
+.sidebar-light .sidebar-item
+	color sidebar-fg
 
-		tr
-			background-color darken(box-bg, 10%)
+.sidebar-flex__search .rc-input__element
+	background-color darken(sidebar-bg, 20%)
+	color input-fg
 
-		td, th
-			border none
-			padding 10px
-			background-color transparent
-
-.permissions-manager .form-role .form-buttons
-	margin-top 15px
-	padding 0
-
-.permissions-manager .form-role label
-	width 88px
-	text-align left
-
-.permissions-manager h2
-	border none
-
-form.inline
-	input[type='text'],
-	input[type='number'],
-	input[type='email'],
-	input[type='url'],
-	input[type='password'],
-	input[type='time'],
-	select
-		margin-top 10px
-		width 194px
-
-.page-list
-	.results
-		border none
-		color chat-fg
-		margin-bottom 0
-		padding 20px 0
-
-	.list
-		.user-image
-			background-color transparent
-			margin 0
-			margin-left 15px
-
-			.avatar:after
-				left -16px
-
-.page-settings
-	a
-		color anchor-fg
-
-	a:hover
-		color darken(anchor-fg, 10%)
-
-	.content .section h1
-		margin 0
-		padding 0
-		color #eee
-
-	.start-import
-		margin-top 15px
-
-	.content
-		background-color chat-bg
-
-	.settings-file-preview .preview.no-file
-		background-color darken(box-bg, 15%)
-		margin-right 15px
-
-	.section
-		margin-left 0
-		margin-right 0
-		margin-top 0
-		margin-bottom 20px
-
-		.section-title .section-title-text
-			color #eee
-
-		.section-content
-			background-color transparent
-
-			.input-line
-				border-color mix(#fff, chat-bg, 4%)
-
-				input
-					background-color mix(#fff, chat-bg, 6%)
-					color #bbb
-					border none
-
-				> label
-					color #aaa
-
-.code-mirror-box .CodeMirror,
-.code-mirror-box.code-mirror-box-fullscreen .title
-	border-color darken(box-bg, 10%)
-
-.code-mirror-box .buttons
-	border-color darken(box-bg, 10%)
-	background-color darken(box-bg, 10%)
-
-.minicolors-theme-rocketchat .minicolors-swatch
-	background-color darken(box-bg, 10%)
-	top 0
-	left 0
-	height 35px
-	border none
-
-.admin-integrations-new-panel .admin-integrations-new-item
-	color chat-fg
-	border-color mix(#fff, box-bg, 10%)
+.page-list a, .page-settings a
+	color anchor-fg
 
 	&:hover
-		background-color darken(box-bg, 10%)
+		color darken(anchor-fg, 10%)
 
-.page-container
-	background-color transparent
+// Borders between input sections.
+.rc-old .page-settings .section-content .input-line
+	border-color lighten(component-bg, 10%)
 
-	.content
-		padding 25px 25px
+.rc-old .fixed-title,
+.rc-old .page-list .results
+	border-color border-color
 
-	h3
-		margin-bottom 10px
-
-// Alerts.
+// Warnings like the 2FA warning.
 .pending-background
-	background-color mix(#fff, warning-color, 30%)
-	border-color mix(#fff, warning-color, 20%)
-	color mix(box-bg, warning-color, 60%)
+	background-color transparent
+	border none
 
-	> .icon-attention
-		color mix(box-bg, warning-color, 60%)
+.rc-old .page-static .content .section .section-content
+	background-color component-bg
+
+.rc-button
+	border none
 
 // Slider.
 .range-slider-range
-	background-color mix(#fff, box-bg, 6%)
-	border-color mix(#fff, box-bg, 6%)
+	background-color mix(#fff, component-bg, 6%)
+	border-color mix(#fff, component-bg, 6%)
 
 	&::-webkit-slider-thumb
 		background-color highlight-color
@@ -210,12 +84,26 @@ form.inline
 	&:after
 		border-right-color highlight-color
 
-@import "base16"
+// TODO: Tweak the text inputs a bit, they sorta suck right now. Also need to style disabled inputs.
+// TODO: Oauth applications srceen.
+// TODO: Permissions screen.
+// TODO: Role edit screen.
+// TODO: New integration screen.
 
-.cm-s-default span.cm-qualifier
-	color #d28445
+// More opinionated "fixes".
+.rc-old .page-settings
+	.section-content:nth-child(2)
+		padding-top 0 !important
 
-#code-mirror-textarea,
-.cm-s-default.CodeMirror,
-.cm-s-default .CodeMirror-gutters
-	background darken(box-bg, 20%)
+		.button
+			margin-top 20px
+
+.rc-old .page-static .content .section h1
+	margin-top 0
+	padding-left 0
+
+.rc-old .page-static .content .section .section-content
+	line-height 1.45em
+
+.input-line textarea
+	width 100%

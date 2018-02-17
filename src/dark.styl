@@ -1,106 +1,111 @@
-// Dark Discord-inspired theme for Rocket.Chat.
-
-// This was developed with all colors removed. It will probably be fine even if
-// you don't do that, but if you see something weird try going to Administration
-// > Layout, delete all the values under "Colors", then click "Save Changes".
-
-.primary-background-color
-	background-color transparent
-
-// Remove the sidebar footer (take out this part if you want to keep the
-// footer).
-.side-nav .footer
-	display none
-
-// Make the sidebars take up the full height now that the sidebar is gone.
-.side-nav .rooms-list,
-.account-box .options,
-.flex-nav .content
-	height 100%
-
-.flex-nav .content
-	top 0
-	padding-top 70px
-	padding-bottom 10px
-
-// I don't want the formatting tips.
-.formatting-tips
-	display none !important
-
-// These too.
-.full-page .logo > img
-.login-terms
-	display none !important
-
-// I don't like the admin tag.
-.role-tag[data-role="Admin"]
-	display none !important
-
-highlight-color = #1a5066
-danger-color = #bc2031
-green-color = #43b581
-purple-color = #7289da
-warning-color = #faa61a
+// Main colors.
+success-color = #43b581
+danger-color = #f04747
+highlight-color = #7289da
+warning-color = #fcb316
 
 // Buttons.
-button-bg = purple-color
+button-bg = highlight-color
 button-fg = mix(button-bg, #ffffff, 20%)
 button-cancel-bg = danger-color
 button-cancel-fg = mix(button-cancel-bg, #ffffff, 20%)
 button-secondary-bg = #eee
 button-secondary-fg = #444
 
-anchor-fg = purple-color
+anchor-fg = highlight-color
+anchor-hover-fg = darken(highlight-color, 10%)
 
 // Role tags, bot tags.
-tag-bg = purple-color
+tag-bg = highlight-color
 
 // Code blocks, blockquotes, popups.
-box-bg = #2e3136
-box-fg = #888
+component-bg = #2e3136
+component-fg = #bbb
+divider-color = darken(component-bg, 10%)
 
 // Left and right sidebars.
 sidebar-bg = #2e3136
+sidebar-fg = #bbb
+flex-tab-bg = darken(sidebar-bg, 15%)
 
-// Online color.
-online = #3bb5e5
-away = #fcb316
-busy = #f04747
+// Status colors.
+online-color = success-color
+away-color = warning-color
+busy-color = danger-color
+invisible-color = #bbb
 
 // Main chat area.
 chat-bg = #36393e
 chat-fg = mix(#fff, chat-bg, 70%)
+border-color = darken(chat-bg, 10%)
 
-body
-	color chat-fg
-	background-color chat-bg
+// Inputs.
+input-fg = mix(#000, chat-fg, 5%)
+input-bg = mix(#000, chat-bg, 10%)
+input-border = mix(#fff, chat-bg, 4%)
+input-focus = mix(chat-bg, highlight-color, 80%)
+placeholder-color = lighten(chat-bg, 20%)
+
+::-webkit-input-placeholder
+	color placeholder-color !important
+
+:-moz-placeholder
+	color placeholder-color !important
+
+::-moz-placeholder
+	color placeholder-color !important
+
+:-ms-input-placeholder
+	color placeholder-color !important
+
+:root:root // To make sure we override.
+	--badge-unread-background highlight-color
+	--rc-color-button-primary highlight-color
+	--rc-color-primary-dark darken(sidebar-bg, 7%)
+	--rc-color-primary-darkest darken(sidebar-bg, 15%)
+	--status-online online-color
+	--status-away away-color
+	--status-busy busy-color
+	--status-invisible invisible-color
+	--popover-background component-bg
+	--popover-title-color component-fg
+	--popover-item-color component-fg
+	--popover-divider-color divider-color
+	--sidebar-background sidebar-bg
+	--sidebar-item-hover-background lighten(sidebar-bg, 5%)
+	--badge-background lighten(sidebar-bg, 8%)
+	--sidebar-item-hover-background darken(sidebar-bg, 13%)
+	--message-box-container-border-color input-border
+	--rc-color-error danger-color
 
 .color-primary-font-color
 	color chat-fg
 
-.secondary-font-color
-	color #fff
-
-.color-tertiary-font-color
-	color chat-fg
-
-#rocket-chat .main-content
+html, body, .content-background-color, .loading-animation
 	background-color chat-bg
 
-.burger i
-	background-color chat-fg
-	opacity 1 !important
+.secondary-background-color
+	background-color component-bg
 
-.button
-	line-height 100%
-	font-weight 700
-	font-size 12px
+.border-secondary-background-color
+	border-color lighten(component-bg, 10%)
+
+.border-component-color
+	border border-color
+
+.background-component-color,
+.background-primary-action-color
+	background-color highlight-color
+
+.background-info-font-color
+	background-color highlight-color
+
+.secondary-font-color
+	color button-fg
 
 .button,
-.button.clean,
-.side-nav .button,
 .button.primary,
-.sweet-alert button.confirm
+.rc-button
 	background-color button-bg
 	color button-fg
 
@@ -112,21 +117,7 @@ body
 		color button-fg
 		background-color darken(button-bg, 10%)
 
-// This needs !important to override the inline styling.
-.sweet-alert button.confirm
-	background-color button-bg !important
-	box-shadow none !important
-
-	&:hover
-		background-color darken(button-bg, 10%) !important
-
-.button.cancel-direct-message,
-.button.cancel-channel,
-.button.delete,
-.button.remove,
-.button.red,
-.button.danger,
-.sweet-alert button.cancel
+.button.danger
 	background-color button-cancel-bg
 	color button-cancel-fg
 
@@ -138,15 +129,6 @@ body
 		background-color darken(button-cancel-bg, 10%)
 		color button-fg
 
-.color-error-contrast
-	color button-cancel-fg
-
-.button.lightblue
-	background-color #02acec
-
-	&:hover
-		background-color darken(#02acec, 10%)
-
 .button.secondary
 	background-color button-secondary-bg
 	color button-secondary-fg
@@ -154,643 +136,157 @@ body
 	&:hover
 		background-color darken(button-secondary-bg, 10%)
 
-.button.button-fullscreen
-	background-color transparent
-	color box-fg
-
-	&:hover
-		background-color transparent
-		color button-fg
-
 // Loading dots.
-.loading > div
-	background-color box-fg
+.loading-animation > div,
+.main-content .loading-animation > div,
+.flex-tab .loading-animation > div
+	background-color component-fg
 
-// Anchor color.
-a
+// The main bar that goes above the chat area.
+.rc-old .fixed-title
+	border-bottom-style solid
+	border-bottom-width 1px
+
+// The message section at the bottom of the chat area.
+.messages-container .footer
+	background transparent
+	border-top-style solid
+	border-top-width 1px
+	box-shadow 0 1px 2px -1px mix(#fff, chat-bg, 6%)
+
+// "Start of conversation" text.
+.messages-box .start
+	color #888
+	text-transform uppercase
+	font-weight 700
+	font-size 12px
+
+// Links inside messages.
+.message a
 	color anchor-fg
 
-a:hover
-	color darken(anchor-fg, 10%)
+	&:hover
+		color anchor-hover-fg
 
-// Includes all avatars: chat and sidebar.
+// All avatars.
 .avatar
 	box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5)
 
-	// There is already a border radius on .avatar but it doesn't affect the image
-	// (on Chromium at least).
-	.avatar-image
-		border-radius 4px
-
-.side-nav .rooms-list,  // Left sidebar with the rooms.
-.flex-tab-bar           // Right sidebar with the small icons.
-	background-color sidebar-bg
-
-.border-component-color
-	border-color transparent
-
-.account-box
-	// Dropdown after clicking the account box.
-	.options
-		background-color darken(sidebar-bg, 10%)
-
-		// Color of the dots next to "Online", "Away", and "Busy".
-		.status.online:after
-			background-color online
-			border-color darken(online, 10%)
-
-		.status.away:after
-			background-color away
-			border-color darken(away, 10%)
-
-		.status.busy:after
-			background-color busy
-			border-color darken(busy, 10%)
-
-		button, a
-			color #aaa
-			background-color transparent
-
-		button:hover, a:hover
-			background-color darken(sidebar-bg, 20%)
-			color #eee
-
-	// Area above the left sidebar with the name and dropdown arrow.
-	.info
-		background-color #282b30
-		border-bottom 1px solid #1c1e22
-
-		h4
-			color #eaeaea
-
-// Color of the online dot next to the profile picture and in popups.
-.account-box .info.status-online .thumb:after,
-.popup-user-status-online
-	background-color online
-	border-color darken(online, 10%)
-
-.account-box .info.status-away .thumb:after,
-.popup-user-status-away
-	background-color away
-	border-color darken(away, 10%)
-
-.account-box .info.status-busy .thumb:after,
-.popup-user-status-busy
-	background-color busy
-	border-color darken(busy, 10%)
-
-.status-offline, .icon-at.status-offline
-	color mix(chat-bg, #fff, 25%)
-
-.status-online, .icon-at.status-online
-	color online
-
-// Color of the dots.
-.user-image.status-online .avatar:after
-	background-color online
-	border-color darken(online, 10%)
-
-.user-image.status-away .avatar:after
-	background-color #fcb316
-	border-color darken(#fcb316, 10%)
-
-.user-image.status-busy .avatar:after
-	background-color #d30230
-	border-color darken(#d30230, 10%)
-
-// Left sidebar.
-.side-nav
-	border-right 1px solid darken(chat-bg, 10%)
+// Sidebar on the left.
+.sidebar
 	box-shadow 1px 0 2px -1px rgba(0, 0, 0, 0.5)
-
-	a
-		transition none
-
-	&:before
-		display none
-
-	.header
-		background-color darken(sidebar-bg, 10%)
-
-	.header.hover, .header:hover
-		.account-box .info h4
-			color #fff
-
-	> .arrow
-		&:before, &:after
-			background-color box-fg
-
-	> .arrow:hover:before, > .arrow:hover:after,
-	> .arrow.hover:before, > .arrow.hover:after
-			background-color lighten(box-fg, 30%)
-
-	h3
-		font-weight 700
-		color mix(sidebar-bg, #fff, 40%)
-
-	ul a
-		color mix(sidebar-bg, #fff, 45%)
-
-	.status-offline
-		color mix(sidebar-bg, #fff, 45%)
-
-	.status-online
-		color mix(sidebar-bg, online, 45%)
-
-	.status-away
-		color mix(sidebar-bg, away, 45%)
-
-	.status-busy
-		color mix(sidebar-bg, busy, 45%)
-
-	.more
-		color mix(sidebar-bg, #fff, 70%)
-
-	h3.active
-		color #fff
-
-	ul a
-		padding-left 10px
-
-		&:hover
-			background-color darken(sidebar-bg, 10%)
-
-	// Active room
-	ul li.active
-		background-color transparent !important
-
-		a
-			background-color darken(sidebar-bg, 10%)
-			color #fff
-
-		.status-offline
-			color mix(sidebar-bg, #fff, 25%)
-
-		.status-online
-			color online
-
-		.status-away
-			color away
-
-		.status-busy
-			color busy
-
-	// Room with an alert
-	ul li.has-alert
-		.name, .icon-lock, .icon-hash
-			color online !important
-
-.main-content
-	// Loading dots.
-	.loading-animation > div
-		background-color chat-fg
-
-	// The main bar that goes above the chat area.
-	header
-		border-bottom 1px solid darken(chat-bg, 10%)
-		background-color chat-bg
-
-.button.join
-	margin-left 10px
-
-// The main chat pane/area.
-.messages-container
-	border none
-
-	.footer
-		background-color chat-bg
-		padding-top 12px
-
-	.message-form
-		.stream-info
-			color box-fg
-			height 23px
-
-		// Chat input.
-		textarea
-			background-color mix(#fff, chat-bg, 6%)
-			color #bbb
-			border 2px solid mix(#fff, chat-bg, 10%)
-			border-right none
-
-			&.editing
-				background-color highlight-color
-
-		// Wraps around the textarea and buttons.
-		> .message-input
-			border none
-
-		// Buttons on the right of the chat input.
-		> .message-input > .file,
-		> .message-input > .share-items > .message-buttons
-		> .message-input > .message-buttons
-			background-color box-bg
-			border 1px solid darken(box-bg, 10%)
-			color box-fg
-			height auto
-
-			&:hover
-				background-color darken(box-bg, 10%)
-				color lighten(box-fg, 10%)
-
-		// Typing indicator.
-		.users-typing
-			background-color transparent
-
-// Slide-in menu on the left sidebar.
-.flex-nav
-	.content
-		background-color sidebar-bg
-
-		h4
-			font-weight 700
-			margin-bottom 15px
-
-	footer
-		background-color darken(sidebar-bg, 10%)
-
-	header
-		background-color darken(sidebar-bg, 10%)
-
-.side-nav .footer
-	background-color darken(sidebar-bg, 10%)
-
-textarea,
-select,
-input[type='text'],
-input[type='number'],
-input[type='email'],
-input[type='url'],
-input[type='password'],
-.flex-nav .input-line input[type='text'],
-.flex-nav .input-line input[type='password'],
-.flex-nav .input-line select
-	background-color mix(#fff, chat-bg, 6%)
-	color #bbb
-	border 1px solid transparent
-
-	&:focus
-		border-color highlight-color
-
-input[type="button"]
-	border none
-
-#rocket-chat
-	background-color chat-bg
-
-.user-view .info .role-tag
-	background-color tag-bg
-
-// Chat messages.
-.message
-	border-top 1px solid mix(#fff, chat-bg, 4%)
-	padding-top 20px
-	margin-top 16px
-
-	a
-		color anchor-fg
-
-		&:hover
-			color darken(anchor-fg, 10%)
-
-	.user
-		color #fafafa
-
-		&:hover
-			color #fff
-
-	.body
-		color chat-fg
-
-	.info
-		.is-bot, .role-tag
-			background-color tag-bg
-			color #fff
-
-		.role-tag
-			margin-right 6px
-
-	&.sequential
-		border-top none
-		padding-top 0
-		margin-top 0
-
-	&.editing .body
-		background-color highlight-color
-		color mix(#fff, highlight-color, 70%)
-
-	&.system .body
-		color darken(chat-fg, 20%)
-
-	&:hover
-		background-color transparent
-
-	// The menu that appears when you click the gear icon in a chat message.
-	.message-dropdown
-		background-color box-bg
-
-		ul li
-			color #999
-
-			&:first-child
-				background-color box-bg
-				border-right-color darken(box-bg, 10%)
-
-			&:hover
-				background-color darken(box-bg, 10%)
-
-// Message highlight (like when you visit a link to a specific message).
-@keyframes highlight
-	0%
-		background highlight-color
-	100%
-		background none
-
-.messages-box
-	// Border to separate from footer.
-	border-bottom 1px solid mix(#000, chat-bg, 10%)
-	box-shadow 0 1px 2px -1px mix(#fff, chat-bg, 6%)
-
-	// "Start of conversation" message.
-	.start
-		color #888
-		text-transform uppercase
-		font-weight 700
-		font-size 12px
-		margin 12px 0 13px 0
-
-// The new day divider with the date of that day.
-.message.new-day
-	padding-top 50px
-	border-top none
-	margin-top 0
-
-	&:before
-		color mix(#fff, chat-bg, 15%)
-		background-color chat-bg
-		top 13px
-		z-index 2
-
-	&:after
-		border-color mix(#fff, chat-bg, 4%)
-		top 23px
-
-select
-	cursor pointer
-
-// Right sidebar.
-.flex-tab-bar
-	border-left 1px solid darken(chat-bg, 10%)
+	border-right 1px solid sidebar-bg
+
+// Sidebar on the right.
+.rc-old .flex-tab-container .flex-tab-bar
+	background-color sidebar-bg
+	border-left 1px solid border-color
 	box-shadow -1px 0 2px -1px rgba(0, 0, 0, 0.5)
 
-	// Buttons on the right sidebar.
-	.tab-button:hover,
+	.tab-button-icon
+		color sidebar-fg
+		fill sidebar-fg
+
+	.tab-button:hover, .tab-button.active
+		background-color flex-tab-bg
+
 	.tab-button.active
-		background-color darken(sidebar-bg, 30%)
+		margin-left -3px
 
-.flex-tab-container
-	.flex-tab
-		background-color darken(sidebar-bg, 10%)
+// Slide-out sidebar
+.flex-tab .content, .flex-tab .user-view, .flex-tab .list-view
+	background-color flex-tab-bg
 
-		.close-flex-tab > span
-			background-color transparent
+.flex-tab input:focus, .flex-tab select:focus, .flex-tab textarea:focus
+	border-color input-focus
 
-			> i
-				border none
-				color chat-fg
-				font-size 15px
-				transition color 100ms ease-in-out
+// All inputs except sidebar search.
+input, select, textarea,
+.rc-input__element,
+	background-color input-bg
+	border-color input-border
+	border-radius 2px !important // I don't feel like overriding each class.
 
-				&:hover
-					color #fff
+	&:focus
+		border-color input-focus
 
-		.content
-			background-color darken(sidebar-bg, 10%)
-			box-shadow -1px 0 3px 0 rgba(0, 0, 0, 0.2)
+// All inputs + search in the sidebar + icons inside inputs.
+input, select, textarea,
+.rc-input__element,
+.toolbar .rc-input__element,
+.rc-input__icon
+	color input-fg
 
-			> div
-				background-color darken(sidebar-bg, 10%)
+// New day divider.
+.message.new-day
+	&::before
+		background-color chat-bg
+		color mix(#fff, chat-bg, 15%)
 
-		.control
-			background-color transparent
+	&::after
+		border-color mix(#fff, chat-bg, 4%)
 
-		.message.new-day:before
-			background-color darken(sidebar-bg, 10%)
+.flex-tab .message.new-day
+	&::before
+		background-color flex-tab-bg
+		color mix(#fff, flex-tab-bg, 15%)
 
-		.day-divider
-			color #777
-			background-color darken(sidebar-bg, 10%)
+	&::after
+		border-color mix(#fff, flex-tab-bg, 4%)
 
-			&:before
-				border-bottom-color rgba(255, 255, 255, 0.06)
-
-			span
-				background-color darken(sidebar-bg, 10%)
-
-.message .day-divider
-	height 40px
-
-	&:before
-		top 20px
-
-// Blockquotes and attachments.
-blockquote:before
-	background-color darken(chat-bg, 30%)
-
-.attachment
-	.attachment-block .attachment-block-border
-		background-color darken(chat-bg, 30%)
-
-	.attachment-title > a
-		text-transform uppercase
-		font-weight 700
-		font-size 12px
-
-	.attachment-download-icon
-		background-color box-bg
-		color box-fg
-		border-color darken(box-bg, 5%)
-
-		&:hover
-			background-color darken(box-bg, 10%)
-			color lighten(box-fg, 10%)
-			border-color darken(box-bg, 10%)
-
-.message a[class^="icon-"]
-	color box-fg
+// File links.
+.rc-old .list-view.uploaded-files-list .file-name
+	color highlight-color
+	border-bottom-color lighten(sidebar-bg, 5%)
 
 	&:hover
-		color lighten(box-fg, 10%)
+		color lighten(highlight-color, 10%)
+		text-decoration none
 
-// Emoji popup.
-.emoji-picker
-	background-color box-bg
+// Icons next to files.
+.message a i, .flex-tab a i, .message a[class^="icon-"], .flex-tab a[class^="icon-"]
+	color lighten(sidebar-bg, 30%)
 
-	.emojis .emoji-list li:hover
-		background-color darken(box-fg, 10%)
+	&:hover
+		color lighten(sidebar-bg, 40%)
 
-	.filter > ul > li
-		border-bottom-color box-bg
-
-		.category-link i
-			color #888
-
-		&:hover
-			border-bottom-color #888
-
-		&.active
-			border-bottom-color online
-
-			.category-link i
-				color #eee
-
-		&.change-tone
-			padding-right 4px
-			border-bottom-color transparent
-
-			.current-tone, .tone-selector span
-				width 15px
-				height 15px
-
-			.tone-selector
-				background-color darken(box-bg, 15%)
-
-.input-line.search
-	.icon-search, .icon-right-open-small, .icon-sort-alt-up,
-	.icon-lock, .icon-comment
-		color #888
-
-// Icon in the message textarea.
-.emoji-picker-icon
-	color #666
-
-code, .code-colors
-	background-color box-bg
-	border-color darken(box-bg, 5%)
+code, .rc-old .code-colors
+	background-color component-bg
+	border-color darken(component-bg, 5%)
 	border-radius 2px
 	color chat-fg
 	font-weight 400
 
-code.inline
-	padding 0.15em 0.5em
+// Emoji filter icons.
+.filter-item:hover
+	border-color lighten(component-bg, 30%)
 
-pre
-	display block
-
-.list-view
-	>.title .see-all
-		text-decoration none
-		color #888
-
-		&:hover
-			color #fff
-
-	.list
-		color #eee
-
-		&.lines
-			margin-left 15px
-
-.control, .list input[type="text"].editing
-	margin-bottom 15px
-
-.list-view.uploaded-files-list
-	a.file-name
-		color anchor-fg
-		border-bottom-color mix(#fff, sidebar-bg, 10%)
-
-		&:hover
-			color darken(anchor-fg, 10%)
-			text-decoration none
-
-	i
-		color #888
-
-	i.file-download:hover
-		color anchor-fg
-
-.load-more-loading
-	margin-left 15px
-
-.list-view .list.lines .load-more-loading
-	margin-left 0
-
-// Unread marker in the sidebar.
-.side-nav .unread
-	background-color mix(online, chat-bg, 50%)
-	border none
-	color #fff
-
-// Unread marker in chat.
-.first-unread .body::before
-	height 1px
-	margin-left -20px
-	background-color transparent
-	z-index 1
-	top -1px
-
-.first-unread .body::after
-	left initial
-	top -8px
-	right 10px
-	color transparent
-	background-color transparent
-	z-index 2
-
-.first-unread.first-unread-opaque .body::before
-	background-color mix(online, chat-bg, 50%)
-
-.first-unread.first-unread-opaque .body::after,
-.first-unread.first-unread-opaque:before
-	color mix(online, chat-bg, 50%)
-	background-color chat-bg
-
-.first-unread.sequential.message
-	padding-top 0
-
-.new-day.first-unread .body::before
-	top 23px
-
-.new-day.first-unread .body::after
-	top 16px
+.filter-item.active
+	border-color highlight-color
 
 // Unread bar.
-.container-bars .unread-bar
+.first-unread .body::before,
+.first-unread-opaque .body::before
 	background-color highlight-color
 
-// Popups.
-.message-popup, .message-popup.search-results-list
-	background-color box-bg
-	color box-fg
-
-.message-popup-title
-	background-color darken(box-bg, 5%)
-	border-color darken(box-bg, 10%)
-	color lighten(box-fg, 30%)
+.first-unread .body::after,
+.first-unread-opaque .body::after
+	color mix(chat-bg, highlight-color, 80%)
 	font-weight 700
 
-.popup-item.selected
-	color #fff
-	background-color highlight-color
+// Reactions.
+.message .reactions
+	> li
+		background-color component-bg
+		border-color darken(component-bg, 10%)
 
-// Search popup.
-.message-popup.search-results-list
-	height 100vh
+	> li.selected
+		background-color component-bg
+		border-color mix(component-bg, highlight-color, 50%)
+		color mix(component-bg, highlight-color, 50%)
 
-// The search input that brings up the search popup.
-.toolbar-search__input
-	padding 2px 15px !important
-
-.toolbar-search__buttons i
-	color box-fg
-
-	&:hover
-		color lighten(box-fg, 30%)
-
-.input-line > span, .input-line > label,
-.flex-nav .input-line label
-	display block
-	margin-bottom 7px
+	> li.add-reaction
+		border none
 
 // Toggle checkbox.
 .input.checkbox.toggle
@@ -803,143 +299,130 @@ pre
 .input.checkbox.toggle,
 .flex-nav .input.checkbox.toggle
 	input:checked + label:before
-		background-color green-color
+		background-color success-color
 
-// Upload bar. (And others?)
-.background-component-color,
-.upload-progress-progress
-	background-color highlight-color
-	color mix(#fff, highlight-color, 80%)
+	input:checked + label:hover:before
+		background-color darken(success-color, 10%)
+
+.rc-old .list-view > .title .see-all
+	text-decoration none
+
+	&:hover
+		text-decoration underline
+
+// Upload progress bar.
+.upload-progress
+
+	.upload-progress-progress
+		background-color highlight-color
+
+	.upload-progress-text
+		color mix(chat-bg, highlight-color, 80%)
 
 	button
-		color mix(#fff, highlight-color, 80%)
+		color mix(chat-bg, highlight-color, 80%)
 
 	button:hover
 		color #fff
 
-// New message popup. (And others?)
-.background-primary-action-color
-	background-color highlight-color
-	color mix(#fff, highlight-color, 80%)
-
+// Popups like when uploading a file.
 .sweet-alert
-	background-color box-bg
+	background-color component-bg
 
-	p
-		color box-fg
-
-	h2
-		color #fff
+	h2, p
+		color component-fg
 
 	input
-		border-color mix(#fff, chat-bg, 4%)
-		color box-fg
+		border-color mix(#fff, component-bg, 4%)
+		color component-fg
+		background-color darken(component-bg, 10%)
 
 		&:focus
-			border-color highlight-color
+			border-color input-focus
 			box-shadow none
 			color #eee
 
+	// TODO: There are some gaps, I think they're always there but just more apparent against the dark background.
 	.sa-icon.sa-success::before,
 	.sa-icon.sa-success::after
-		background-color box-bg
+		background-color component-bg
 
 	.sa-icon.sa-success .sa-fix
-		background-color box-bg
+		background-color component-bg
 
-.alert-warning
-	background-color warning-color
-	border none
-	color mix(#000, warning-color, 50%)
+	// !important because the styles we need to override are inline...
+	button.confirm
+		background-color button-bg !important
+		color button-fg !important
 
-// Inputs.
-input[readonly], input[disabled], textarea[readonly], textarea[disabled], select[disabled]
-	background-color mix(#000, chat-bg, 10%) !important
+		&:hover
+			color button-fg !important
+			background-color darken(button-bg, 10%) !important
 
-placeholder = #888
-::-webkit-input-placeholder
-	color placeholder !important
+	button.cancel
+		background-color button-secondary-bg
+		color button-secondary-fg
 
-:-moz-placeholder
-	color placeholder !important
+		&:hover
+			background-color darken(button-secondary-bg, 10%)
 
-::-moz-placeholder
-	color placeholder !important
+// When editing a message.
+.message.editing, .rc-message-box__container.editing
+	background-color mix(chat-bg, highlight-color, 90%)
 
-:-ms-input-placeholder
-	color placeholder !important
-
-// Scrollbar.
-.CodeMirror-scrollbar-filler,
-.CodeMirror-gutter-filler
-	background-color rgba(0, 0, 0, 0.05) !important
-
-::-webkit-scrollbar-thumb
-	background-color box-bg
-
-// Autocomplete.
-.-autocomplete-container,
-.flex-nav .-autocomplete-container
-	background-color box-bg
-	border-color darken(box-bg, 10%)
-	border-radius 3px
-	overflow auto
-
-.-autocomplete-item,
-.flex-nav .-autocomplete-item
-	border-color darken(box-bg, 10%)
-
-.-autocomplete-item.selected,
-.flex-nav .-autocomplete-item.selected
-	background-color highlight-color
-
-.full-page
-	background-color chat-bg
-	background-image none
-
-// Login page.
-.login-terms
+// Hopefully this gets updated to match all the other pages.
+.preferences-page__header
+	border-bottom 1px solid border-color
+	box-shadow none
 	color chat-fg
 
-#login-card
-	background-color box-bg
-	color box-fg
-
-	.input-line
-		label
-			margin-left 0
-
-		input, select
-			border-color mix(#fff, box-bg, 8%)
-			color box-fg
-			padding-left 0
-			padding-right 0
-
-			&.error
-				border-color danger-color
-
-		.input-error
-			color danger-color
-			padding 0
-			margin-top 7px
-
-	.submit, .register, .forgot-password, .back-to-login
-		&:hover
-			color #eee
-
-.register-link-replacement
-	margin-top 15px
-
-// CodeMirror color fix.
-.hljs-keyword,
-.css .rule .hljs-keyword,
-.hljs-winutils,
-.javascript .hljs-title,
-.nginx .hljs-title,
-.hljs-subst,
-.hljs-request,
-.hljs-status
-	color #abb2bf
+.rc-form-legend, .rc-form-label
+	color chat-fg
 
 @import "dark-admin"
 @import "atom-one-dark"
+
+// TODO: Markdown toolbar icon hover color.
+// TODO: Go through public pages (login, signup, etc).
+// TODO: Style the "so-and-so is typing" message.
+// TODO: Icons in the message box.
+// TODO: Log out icon, leave channel, and send icons are black for some reason.
+// TODO: Create channel pane.
+
+// The rest of these are opinionated "fixes".
+:root:root
+	// Bigger room titles like they used to be
+	--rooms-list-title-text-size 0.95rem
+
+// Less space after the room title.
+.rooms-list__type
+	padding-bottom 5px
+
+	// Move the badge so it's not touching the title text.
+	.badge
+		margin-left 5px
+
+// Make the triple dot icon fade in like the background does.
+.sidebar-item__menu
+	display: block
+	opacity 0
+	transition all 0.3s
+
+.sidebar-item:hover .sidebar-item__menu
+	opacity 1
+
+.toolbar
+	padding 0 10px 20px
+
+.rc-old .message.new-day
+	margin-top 40px
+
+.rc-old .list-view > .title p
+	margin-top 10px
+
+.rc-old .buttons-group
+	margin-bottom 10px
+	margin-top 10px
+
+.upload-progress-progress
+	z-index 999
