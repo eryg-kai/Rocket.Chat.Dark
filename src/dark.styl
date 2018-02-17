@@ -72,9 +72,9 @@ placeholder-color = lighten(chat-bg, 20%)
 	--popover-item-color component-fg
 	--popover-divider-color divider-color
 	--sidebar-background sidebar-bg
-	--sidebar-item-hover-background lighten(sidebar-bg, 5%)
 	--badge-background lighten(sidebar-bg, 8%)
 	--sidebar-item-hover-background darken(sidebar-bg, 13%)
+	--sidebar-item-popup-background darken(sidebar-bg, 13%)
 	--message-box-container-border-color input-border
 	--rc-color-error danger-color
 	--create-channel-title-color chat-fg
@@ -85,6 +85,8 @@ placeholder-color = lighten(chat-bg, 20%)
 	--popup-list-selected-background highlight-color
 	--tags-text-color #fff
 	--tags-background highlight-color
+	--message-box-markdown-color chat-fg
+	--message-box-markdown-hover-color darken(chat-fg, 50%)
 
 .color-primary-font-color
 	color chat-fg
@@ -211,8 +213,9 @@ html, body, .content-background-color, .loading-animation
 // All inputs except sidebar search.
 input, select, textarea,
 .rc-input__element,
+.emoji-top .emoji-filter .search
 	background-color input-bg
-	border-color input-border
+	border 2px solid input-border
 	border-radius 2px !important // I don't feel like overriding each class.
 
 	&:focus
@@ -225,7 +228,8 @@ input, select, textarea,
 	color input-fg
 
 // Icons inside inputs.
-.rc-input__icon
+.rc-input__icon,
+.rc-message-box__icon
 	color input-border
 
 // New day divider.
@@ -269,11 +273,27 @@ code, .rc-old .code-colors
 	font-weight 400
 
 // Emoji filter icons.
-.filter-item:hover
-	border-color lighten(component-bg, 30%)
+.filter-item
+	border-color darken(component-fg, 30%)
 
-.filter-item.active
-	border-color highlight-color
+	.category-link
+		color darken(component-fg, 30%)
+
+	&:hover
+		border-color darken(component-fg, 10%)
+
+		.category-link
+			color darken(component-fg, 10%)
+
+	&.active
+		border-color highlight-color
+
+		.category-link
+			color highlight-color
+
+// Hover over emojis.
+.emoji-picker .emojis .emoji-list li:hover
+	background-color darken(component-bg, 20%)
 
 // Unread bar.
 .first-unread .body::before,
@@ -323,7 +343,6 @@ code, .rc-old .code-colors
 
 // Upload progress bar.
 .upload-progress
-
 	.upload-progress-progress
 		background-color highlight-color
 
@@ -403,7 +422,6 @@ code, .rc-old .code-colors
 @import "dark-admin"
 @import "atom-one-dark"
 
-// TODO: Markdown toolbar icon hover color.
 // TODO: Go through public pages (login, signup, etc).
 // TODO: Style the "so-and-so is typing" message.
 // TODO: Icons in the message box.
@@ -448,3 +466,6 @@ code, .rc-old .code-colors
 
 .upload-progress-progress
 	z-index 999
+
+.rc-tags
+	padding-left 2rem
