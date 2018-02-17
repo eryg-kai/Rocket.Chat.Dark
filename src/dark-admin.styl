@@ -84,19 +84,45 @@
 	&:after
 		border-right-color highlight-color
 
-// TODO: Tweak the text inputs a bit, they sorta suck right now. Also need to style disabled inputs.
-// TODO: Oauth applications srceen.
-// TODO: Permissions screen.
-// TODO: Role edit screen.
-// TODO: New integration screen.
+.admin-integrations-new-panel .admin-integrations-new-item
+	border-color border-color
+	color component-fg
+
+	&:hover
+		background-color mix(component-bg, highlight-color, 80%)
+
+.rc-old .page-settings .section
+	.message.new-day::before
+		background-color component-bg
+
+	.attachment-block-border
+		background-color highlight-color !important // Override inline style.
+
+.rc-old .page-container .content .rocket-form fieldset small
+	color chat-fg
+
+.input-line.setting-changed > label
+	color highlight-color
+
+.rc-old .select-arrow
+	color component-fg
+
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler
+	background-color rgba(0, 0, 0, 0.05) !important
+
+::-webkit-scrollbar-thumb
+	background-color component-bg
+
+@import "base16"
 
 // More opinionated "fixes".
 .rc-old .page-settings
 	.section-content:nth-child(2)
 		padding-top 0 !important
 
-		.button
-			margin-top 20px
+	.section-content > .button
+		margin-top 20px
 
 .rc-old .page-static .content .section h1
 	margin-top 0
@@ -107,3 +133,22 @@
 
 .input-line textarea
 	width 100%
+
+.rc-old .page-container .content .rocket-form .submit
+	margin-right 20px
+
+.permissions-manager > a,
+.rc-old .page-settings .content > a
+	margin-left 20px
+
+.rc-old .page-settings .section-content .color-editor > select
+	border-left none
+	cursor pointer
+
+.rc-old .page-settings .section-content .flex-grow-1 > input
+	border-bottom-right-radius 0 !important
+	border-top-right-radius 0 !important
+
+.rc-old .select-arrow
+	top 7px
+	z-index 1
