@@ -27,8 +27,16 @@
   --sidebar-item-hover-background: #373b41;
   --badge-background: #3d4148;
   --sidebar-item-hover-background: #282b2f;
-  --message-box-container-border-color: #3e4045;
+  --message-box-container-border-color: #54565a;
   --rc-color-error: #f04747;
+  --create-channel-title-color: #c2c3c5;
+  --tags-border-color: #54565a;
+  --popup-list-background: #2e3136;
+  --popup-list-name-color: #bbb;
+  --popup-list-background-hover: #7289da;
+  --popup-list-selected-background: #7289da;
+  --tags-text-color: #fff;
+  --tags-background: #7289da;
 }
 .color-primary-font-color {
   color: #c2c3c5;
@@ -153,14 +161,14 @@ body,
 .flex-tab input:focus,
 .flex-tab select:focus,
 .flex-tab textarea:focus {
-  border-color: #42495d;
+  border-color: #5a6073;
 }
 input,
 select,
 textarea,
 .rc-input__element,
 background-color input-bg {
-  border-color: #3e4045;
+  border-color: #54565a;
   border-radius: 2px !important;
 }
 input:focus,
@@ -168,15 +176,17 @@ select:focus,
 textarea:focus,
 .rc-input__element:focus,
 background-color input-bg:focus {
-  border-color: #42495d;
+  border-color: #5a6073;
 }
 input,
 select,
 textarea,
 .rc-input__element,
-.toolbar .rc-input__element,
-.rc-input__icon {
+.toolbar .rc-input__element {
   color: #b8b9bb;
+}
+.rc-input__icon {
+  color: #54565a;
 }
 .message.new-day::before {
   background-color: #36393e;
@@ -292,7 +302,7 @@ code,
   background-color: #292c31;
 }
 .sweet-alert input:focus {
-  border-color: #42495d;
+  border-color: #5a6073;
   box-shadow: none;
   color: #eee;
 }
@@ -330,6 +340,13 @@ code,
 .rc-form-legend,
 .rc-form-label {
   color: #c2c3c5;
+}
+.rc-switch__text {
+  color: #c2c3c5;
+}
+.rc-popup-list__item.selected .rc-popup-list__item-name,
+.rc-popup-list__item:hover .rc-popup-list__item-name {
+  color: #fff;
 }
 .rc-old .page-settings .section,
 .rc-old .page-container table {

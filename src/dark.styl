@@ -42,8 +42,8 @@ border-color = darken(chat-bg, 10%)
 // Inputs.
 input-fg = mix(#000, chat-fg, 5%)
 input-bg = mix(#000, chat-bg, 10%)
-input-border = mix(#fff, chat-bg, 4%)
-input-focus = mix(chat-bg, highlight-color, 80%)
+input-border = mix(#fff, chat-bg, 15%)
+input-focus = mix(input-border, highlight-color, 80%)
 placeholder-color = lighten(chat-bg, 20%)
 
 ::-webkit-input-placeholder
@@ -77,6 +77,14 @@ placeholder-color = lighten(chat-bg, 20%)
 	--sidebar-item-hover-background darken(sidebar-bg, 13%)
 	--message-box-container-border-color input-border
 	--rc-color-error danger-color
+	--create-channel-title-color chat-fg
+	--tags-border-color input-border
+	--popup-list-background component-bg
+	--popup-list-name-color component-fg
+	--popup-list-background-hover highlight-color
+	--popup-list-selected-background highlight-color
+	--tags-text-color #fff
+	--tags-background highlight-color
 
 .color-primary-font-color
 	color chat-fg
@@ -210,12 +218,15 @@ input, select, textarea,
 	&:focus
 		border-color input-focus
 
-// All inputs + search in the sidebar + icons inside inputs.
+// All inputs + search in the sidebar.
 input, select, textarea,
 .rc-input__element,
-.toolbar .rc-input__element,
-.rc-input__icon
+.toolbar .rc-input__element
 	color input-fg
+
+// Icons inside inputs.
+.rc-input__icon
+	color input-border
 
 // New day divider.
 .message.new-day
@@ -370,7 +381,7 @@ code, .rc-old .code-colors
 .message.editing, .rc-message-box__container.editing
 	background-color mix(chat-bg, highlight-color, 90%)
 
-// Hopefully this gets updated to match all the other pages.
+// Preferences page styles. Hopefully this gets updated to match all the other pages.
 .preferences-page__header
 	border-bottom 1px solid border-color
 	box-shadow none
@@ -378,6 +389,16 @@ code, .rc-old .code-colors
 
 .rc-form-legend, .rc-form-label
 	color chat-fg
+
+// Create a channel switch label.
+.rc-switch__text
+	color chat-fg
+
+// Invite users popup
+.rc-popup-list__item.selected,
+.rc-popup-list__item:hover
+	.rc-popup-list__item-name
+		color #fff
 
 @import "dark-admin"
 @import "atom-one-dark"
@@ -387,7 +408,6 @@ code, .rc-old .code-colors
 // TODO: Style the "so-and-so is typing" message.
 // TODO: Icons in the message box.
 // TODO: Log out icon, leave channel, and send icons are black for some reason.
-// TODO: Create channel pane.
 // TODO: The sidebar and the status dropdown need to be different colors.
 // TODO: Dividers between messages (like Discord).
 
