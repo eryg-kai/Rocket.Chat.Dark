@@ -806,7 +806,8 @@ code,
   margin-top: 20px;
 }
 .rc-old .message.new-day:before {
-  top: -9px;
+  line-height: 100%;
+  top: -7px;
 }
 .rc-old .message.new-day:after {
   display: none;
@@ -854,41 +855,93 @@ code,
 .rc-old .message:hover {
   background-color: transparent;
 }
+.rc-old .first-unread.new-day:before {
+  color: #7289da;
+}
 .rc-old .first-unread .body::before,
 .rc-old .cozy .first-unread .body::before,
 .rc-old .compact .first-unread .body::before {
   height: 1px;
 }
-.rc-old .first-unread.new-day:before {
-  color: #7289da;
-}
 .rc-old .first-unread .body::after,
 .rc-old .cozy .first-unread .body::after,
 .rc-old .compact .first-unread .body::after {
+  background-color: #36393e;
   color: #7289da;
   font-size: 0.8em;
-  left: auto;
-  right: -4px;
-  top: -15px;
+  left: 50%;
+  line-height: 100%;
+  margin-left: -134px/2;
+  right: auto;
+  top: -5px;
   z-index: 1;
 }
 .rc-old .first-unread.message.sequential,
-.rc-old .first-unread.sequential.message.sequential,
 .rc-old .cozy .first-unread.message.sequential,
-.rc-old .cozy .first-unread.sequential.message.sequential,
-.rc-old .compact .first-unread.message.sequential,
-.rc-old .compact .first-unread.sequential.message.sequential {
+.rc-old .compact .first-unread.message.sequential {
   padding-top: 5px;
+}
+.rc-old .first-unread.message.new-day .body::after,
+.rc-old .cozy .first-unread.message.new-day .body::after,
+.rc-old .compact .first-unread.message.new-day .body::after {
+  display: none;
 }
 .upload-progress-progress {
   z-index: 999;
 }
 .message-actions {
-  top: 35px;
+  top: 40px;
 }
 .message.sequential .message-actions {
   top: 0;
 }
 .messages-box .start {
   margin-top: 0;
+}
+.rc-old .cozy .message {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.rc-old .cozy .message.first-unread {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.rc-old .cozy .message .message-actions {
+  top: 30px;
+}
+.rc-old .cozy .message.sequential {
+  margin-top: 0;
+  padding-top: 0;
+}
+.rc-old .cozy .message.sequential .message-actions {
+  top: 0;
+}
+.rc-old .compact .message {
+  margin-top: 10px;
+  min-height: 0;
+  padding-top: 10px;
+}
+.rc-old .compact .message.first-unread {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+.rc-old .compact .message .message-actions {
+  top: 10px;
+}
+.rc-old .compact .message.new-day {
+  margin-top: 15px;
+  padding-top: 15px;
+}
+.rc-old .compact .message.new-day .message-actions {
+  top: 15px;
+}
+.rc-old .compact .message.sequential {
+  margin-top: 0;
+  padding-top: 0;
+}
+.rc-old .compact .message.sequential.first-unread {
+  padding-top: 5px;
+}
+.rc-old .compact .message.sequential .message-actions {
+  top: 0;
 }

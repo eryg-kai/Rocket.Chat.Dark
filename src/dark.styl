@@ -514,7 +514,8 @@ code, .rc-old .code-colors
 	margin-top 20px
 
 	&:before
-		top -9px
+		line-height 100%
+		top -7px
 
 	&:after
 		display none
@@ -563,32 +564,89 @@ code, .rc-old .code-colors
 	&:hover
 		background-color transparent
 
-.rc-old .first-unread .body::before, .rc-old .cozy .first-unread .body::before, .rc-old .compact .first-unread .body::before
-	height 1px
-
 .rc-old .first-unread.new-day:before
 	color highlight-color
 
-.rc-old .first-unread .body::after, .rc-old .cozy .first-unread .body::after, .rc-old .compact .first-unread .body::after
-	color highlight-color
-	font-size 0.8em
-	left auto
-	right -4px
-	top -15px
-	z-index 1
+.rc-old .first-unread,
+.rc-old .cozy .first-unread,
+.rc-old .compact .first-unread
+	.body::before
+		height 1px
 
-.rc-old .first-unread.message, .rc-old .first-unread.sequential.message, .rc-old .cozy .first-unread.message, .rc-old .cozy .first-unread.sequential.message, .rc-old .compact .first-unread.message, .rc-old .compact .first-unread.sequential.message
-	&.sequential
-		padding-top 5px
+	.body::after
+		background-color chat-bg
+		color highlight-color
+		font-size 0.8em
+		left 50%
+		line-height 100%
+		margin-left -134px / 2
+		right auto
+		top -5px
+		z-index 1
+
+	&.message
+		&.sequential
+			padding-top 5px
+
+		&.new-day
+			.body::after
+				display none
 
 .upload-progress-progress
 	z-index 999
 
 .message-actions
-	top 35px
+	top 40px
 
 .message.sequential .message-actions
 	top 0
 
 .messages-box .start
 	margin-top 0
+
+.rc-old .cozy .message
+	margin-top 10px
+	padding-top 10px
+
+	&.first-unread
+		margin-top 10px
+		padding-top 10px
+
+	.message-actions
+		top 30px
+
+	&.sequential
+		margin-top 0
+		padding-top 0
+
+		.message-actions
+			top 0
+
+.rc-old .compact .message
+	margin-top 10px
+	min-height 0
+	padding-top 10px
+
+	&.first-unread
+		margin-top 10px
+		padding-top 10px
+
+	.message-actions
+		top 10px
+
+	&.new-day
+		margin-top 15px
+		padding-top 15px
+
+		.message-actions
+			top 15px
+
+	&.sequential
+		margin-top 0
+		padding-top 0
+
+		&.first-unread
+			padding-top 5px
+
+		.message-actions
+			top 0
