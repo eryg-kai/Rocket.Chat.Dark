@@ -865,12 +865,12 @@ code,
   top: -15px;
   z-index: 1;
 }
-.rc-old .first-unread.message,
-.rc-old .first-unread.sequential.message,
-.rc-old .cozy .first-unread.message,
-.rc-old .cozy .first-unread.sequential.message,
-.rc-old .compact .first-unread.message,
-.rc-old .compact .first-unread.sequential.message {
+.rc-old .first-unread.message.sequential,
+.rc-old .first-unread.sequential.message.sequential,
+.rc-old .cozy .first-unread.message.sequential,
+.rc-old .cozy .first-unread.sequential.message.sequential,
+.rc-old .compact .first-unread.message.sequential,
+.rc-old .compact .first-unread.sequential.message.sequential {
   padding-top: 5px;
 }
 .upload-progress-progress {
