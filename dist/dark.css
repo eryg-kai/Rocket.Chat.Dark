@@ -458,6 +458,9 @@ code,
 .unread-bar button:hover {
   color: #e2e7f7;
 }
+.rc-old .announcement {
+  background-color: #7289da;
+}
 .rc-old .page-settings .section,
 .rc-old .page-container table {
   background-color: #2a2c31;
