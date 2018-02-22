@@ -434,12 +434,14 @@ code, .rc-old .code-colors
 .message .reactions
 	> li
 		background-color component-bg
-		border-color darken(component-bg, 10%)
+		border-color component-bg
+		color highlight-color
 
 	> li.selected
 		background-color component-bg
-		border-color mix(component-bg, highlight-color, 50%)
-		color mix(component-bg, highlight-color, 50%)
+		background-color highlight-color
+		border-color highlight-color
+		color #fff
 
 	> li.add-reaction
 		border none

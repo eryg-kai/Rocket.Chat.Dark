@@ -425,12 +425,14 @@ code,
 }
 .message .reactions > li {
   background-color: #2a2c31;
-  border-color: #26282c;
+  border-color: #2a2c31;
+  color: #7289da;
 }
 .message .reactions > li.selected {
   background-color: #2a2c31;
-  border-color: #4e5a85;
-  color: #4e5a85;
+  background-color: #7289da;
+  border-color: #7289da;
+  color: #fff;
 }
 .message .reactions > li.add-reaction {
   border: none;
