@@ -365,15 +365,70 @@ code, .rc-old .code-colors
 .emoji-picker .emojis .emoji-list li:hover
 	background-color darken(component-bg, 20%)
 
-// Unread bar.
-.first-unread .body::before,
-.first-unread-opaque .body::before
-	background-color highlight-color
+// Add dividers between messages similar to the date dividers.
+.rc-old .message
+	margin-top 40px
 
-.first-unread .body::after,
-.first-unread-opaque .body::after
-	color mix(chat-bg, highlight-color, 80%)
-	font-weight 700
+	.message-actions
+		bottom 4px
+		top auto
+
+	&::after
+		border-top 1px solid lighten(chat-bg, 5%)
+		content: " ";
+		display: block;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		top: -20px;
+		width: 100%;
+
+	&.sequential
+		padding-top 0
+
+		&::after
+			display none
+
+		.message-actions
+			bottom auto
+			top 0
+
+	// Unread line marker.
+	&.first-unread
+		// Adjust to account for new border and margin.
+		.body::before
+			background-color highlight-color
+			top -20px
+
+		.body::after
+			background-color chat-bg
+			color highlight-color
+			top -25px
+
+	&.first-unread.sequential
+		margin-top 10px
+
+		.body::before
+			top -6px
+
+		.body::after
+			top -12px
+
+	// Also color the date.
+	&.first-unread.new-day
+		&::before
+			color highlight-color
+
+		&::after
+			border-color highlight-color
+
+.rc-old .compact .message
+	min-height 0
+	padding-top 2px
+	padding-bottom 2px
+
+	.message-actions
+		bottom 0
 
 // Reactions.
 .message .reactions
@@ -472,8 +527,7 @@ code, .rc-old .code-colors
 
 // Selecting a message.
 .message.editing, .rc-message-box__container.editing,
-.messages-box.selectable .selected,
-.rc-old .message:hover
+.messages-box.selectable .selected
 	background-color mix(chat-bg, highlight-color, 90%)
 
 // Preferences page styles. Hopefully this gets updated to match all the other pages.
@@ -661,75 +715,12 @@ code, .rc-old .code-colors
 	margin-top 3px
 	padding-left 0
 
-.rc-old .message
-	margin-top 40px
-
-	&::after
-		border-top 1px solid lighten(chat-bg, 5%)
-		content: " ";
-		display: block;
-		left: 0;
-		pointer-events: none;
-		position: absolute;
-		top: -20px;
-		width: 100%;
-
-	&.sequential
-		border-top none
-		padding-top 0
-
-		&::after
-			display none
-
-.rc-old .first-unread.new-day:before
-	color highlight-color
-
-.rc-old .first-unread,
-.rc-old .cozy .first-unread,
-.rc-old .compact .first-unread
-	.body::before
-		height 1px
-
-	.body::after
-		background-color chat-bg
-		color highlight-color
-		left 50%
-		line-height 100%
-		margin-left -134px / 2
-		right auto
-		top -5px
-		z-index 1
-
-	&.message
-		&.sequential
-			padding-top 5px
-
-		&.new-day
-			.body::after
-				display none
-
 .upload-progress-progress
 	z-index 999
-
-.message-actions
-	top 24px
-
-.message.sequential .message-actions
-	top 0
 
 .messages-box .start
 	margin-top 0
 	padding 20px 0
-
-.rc-old .compact .message
-	min-height 0
-	padding-top 0
-
-	.message-actions
-		top 0
-
-	.message-actions__menu
-		padding 0
 
 .contextual-bar__content
 	padding-top 0

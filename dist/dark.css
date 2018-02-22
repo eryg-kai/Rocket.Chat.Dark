@@ -364,14 +364,64 @@ code,
 .emoji-picker .emojis .emoji-list li:hover {
   background-color: #222327;
 }
-.first-unread .body::before,
-.first-unread-opaque .body::before {
-  background-color: #7289da;
+.rc-old .message {
+  margin-top: 40px;
 }
-.first-unread .body::after,
-.first-unread-opaque .body::after {
-  color: #42495d;
-  font-weight: 700;
+.rc-old .message .message-actions {
+  bottom: 4px;
+  top: auto;
+}
+.rc-old .message::after {
+  border-top: 1px solid #3f4349;
+  content: " ";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+}
+.rc-old .message.sequential {
+  padding-top: 0;
+}
+.rc-old .message.sequential::after {
+  display: none;
+}
+.rc-old .message.sequential .message-actions {
+  bottom: auto;
+  top: 0;
+}
+.rc-old .message.first-unread .body::before {
+  background-color: #7289da;
+  top: -20px;
+}
+.rc-old .message.first-unread .body::after {
+  background-color: #36393e;
+  color: #7289da;
+  top: -25px;
+}
+.rc-old .message.first-unread.sequential {
+  margin-top: 10px;
+}
+.rc-old .message.first-unread.sequential .body::before {
+  top: -6px;
+}
+.rc-old .message.first-unread.sequential .body::after {
+  top: -12px;
+}
+.rc-old .message.first-unread.new-day::before {
+  color: #7289da;
+}
+.rc-old .message.first-unread.new-day::after {
+  border-color: #7289da;
+}
+.rc-old .compact .message {
+  min-height: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.rc-old .compact .message .message-actions {
+  bottom: 0;
 }
 .message .reactions > li {
   background-color: #2a2c31;
@@ -465,8 +515,7 @@ code,
 }
 .message.editing,
 .rc-message-box__container.editing,
-.messages-box.selectable .selected,
-.rc-old .message:hover {
+.messages-box.selectable .selected {
   background-color: #3c414d;
 }
 .preferences-page__header {
@@ -962,78 +1011,12 @@ code,
   margin-top: 3px;
   padding-left: 0;
 }
-.rc-old .message {
-  margin-top: 40px;
-}
-.rc-old .message::after {
-  border-top: 1px solid #3f4349;
-  content: " ";
-  display: block;
-  left: 0;
-  pointer-events: none;
-  position: absolute;
-  top: -20px;
-  width: 100%;
-}
-.rc-old .message.sequential {
-  border-top: none;
-  padding-top: 0;
-}
-.rc-old .message.sequential::after {
-  display: none;
-}
-.rc-old .first-unread.new-day:before {
-  color: #7289da;
-}
-.rc-old .first-unread .body::before,
-.rc-old .cozy .first-unread .body::before,
-.rc-old .compact .first-unread .body::before {
-  height: 1px;
-}
-.rc-old .first-unread .body::after,
-.rc-old .cozy .first-unread .body::after,
-.rc-old .compact .first-unread .body::after {
-  background-color: #36393e;
-  color: #7289da;
-  left: 50%;
-  line-height: 100%;
-  margin-left: -134px/2;
-  right: auto;
-  top: -5px;
-  z-index: 1;
-}
-.rc-old .first-unread.message.sequential,
-.rc-old .cozy .first-unread.message.sequential,
-.rc-old .compact .first-unread.message.sequential {
-  padding-top: 5px;
-}
-.rc-old .first-unread.message.new-day .body::after,
-.rc-old .cozy .first-unread.message.new-day .body::after,
-.rc-old .compact .first-unread.message.new-day .body::after {
-  display: none;
-}
 .upload-progress-progress {
   z-index: 999;
-}
-.message-actions {
-  top: 24px;
-}
-.message.sequential .message-actions {
-  top: 0;
 }
 .messages-box .start {
   margin-top: 0;
   padding: 20px 0;
-}
-.rc-old .compact .message {
-  min-height: 0;
-  padding-top: 0;
-}
-.rc-old .compact .message .message-actions {
-  top: 0;
-}
-.rc-old .compact .message .message-actions__menu {
-  padding: 0;
 }
 .contextual-bar__content {
   padding-top: 0;
