@@ -9,8 +9,8 @@ button-bg = highlight-color
 button-fg = mix(button-bg, #ffffff, 20%)
 button-cancel-bg = danger-color
 button-cancel-fg = mix(button-cancel-bg, #ffffff, 20%)
-button-secondary-bg = #eee
-button-secondary-fg = #444
+button-secondary-bg = component-fg
+button-secondary-fg = component-bg
 
 anchor-fg = highlight-color
 anchor-hover-fg = darken(highlight-color, 10%)
@@ -23,7 +23,6 @@ divider-color = darken(component-bg, 10%)
 // Left and right sidebars.
 sidebar-bg = #2f3136
 sidebar-fg = #bbb
-flex-tab-bg = darken(sidebar-bg, 15%)
 
 // Status colors.
 online-color = success-color
@@ -87,6 +86,13 @@ icon-fg = mix(chat-bg, chat-fg, 50%)
 	--message-box-markdown-color chat-fg
 	--message-box-markdown-hover-color darken(chat-fg, 50%)
 	--message-box-user-typing-user-color highlight-color
+	--header-background-color chat-bg
+	--header-title-username-color-darker chat-fg
+	--color-darkest mix(chat-bg, chat-fg, 50%)
+	--tooltip-background component-bg
+	--rc-color-alert-message-primary-background component-bg
+	--rc-color-alert-message-secondary-background component-bg
+	--chip-background highlight-color
 
 .color-primary-font-color
 	color chat-fg
@@ -118,33 +124,74 @@ html, body, .content-background-color, .loading-animation
 .rc-button
 	background-color button-bg
 	color button-fg
+	border none
 
 	&:hover
 		color button-fg
 		background-color darken(button-bg, 10%)
+		opacity 1 !important
 
 	&[disabled]
 		background-color mix(chat-bg, button-bg, 50%)
 		color mix(chat-bg, button-fg, 50%)
 
-.button.danger
+.rc-button--outline
+	background-color transparent
+	border 2px solid button-bg
+	color button-bg
+
+	&:hover
+		background-color transparent
+		border-color darken(button-bg, 10%)
+		color darken(button-bg, 10%)
+
+	&[disabled]
+		background-color transparent
+		border-color mix(chat-bg, button-bg, 50%)
+		color mix(chat-bg, button-bg, 50%)
+
+.button.danger,
+.rc-button--cancel
 	background-color button-cancel-bg
 	color button-cancel-fg
 
 	&:hover
 		background-color darken(button-cancel-bg, 10%)
-		color button-fg
+		color button-cancel-fg
+		opacity 1 !important
 
 	&[disabled]
 		background-color mix(chat-bg, button-cancel-bg, 50%)
 		color mix(chat-bg, button-cancel-fg, 50%)
 
-.button.secondary
+.rc-button--cancel.rc-button--outline
+	background-color transparent
+	border 2px solid button-cancel-bg
+	color button-cancel-bg
+
+	&:hover
+		background-color transparent
+		border-color darken(button-cancel-bg, 10%)
+		color darken(button-cancel-bg, 10%)
+
+	&[disabled]
+		background-color transparent
+		border-color mix(chat-bg, button-cancel-bg, 50%)
+		color mix(chat-bg, button-cancel-bg, 50%)
+
+.button.secondary,
+.rc-button--secondary
 	background-color button-secondary-bg
 	color button-secondary-fg
 
 	&:hover
 		background-color darken(button-secondary-bg, 10%)
+		color button-secondary-fg
+		opacity 1 !important
+
+	&[disabled]
+		background-color mix(chat-bg, button-secondary-bg, 50%)
+		color mix(chat-bg, button-secondary-fg, 70%)
 
 // Loading dots.
 .loading-animation > div,
@@ -153,9 +200,9 @@ html, body, .content-background-color, .loading-animation
 	background-color component-fg
 
 // The main bar that goes above the chat area.
-.rc-old .fixed-title
-	border-bottom-style solid
-	border-bottom-width 1px
+.rc-old .fixed-title, .rc-header
+	border-bottom 1px solid border-color
+	box-shadow none
 
 // The message section at the bottom of the chat area.
 .messages-container .footer
@@ -198,26 +245,36 @@ html, body, .content-background-color, .loading-animation
 		fill sidebar-fg
 
 	.tab-button:hover, .tab-button.active
-		background-color flex-tab-bg
-
-	.tab-button.active
-		margin-left -3px
+		background-color sidebar-bg
 
 // Slide-out sidebar
-.flex-tab .content, .flex-tab .user-view, .flex-tab .list-view
-	background-color flex-tab-bg
+.flex-tab .content, .flex-tab .user-view, .flex-tab .list-view, .contextual-bar, .rc-user-info-container
+	background-color sidebar-bg
 
+// User info.
+.rc-user-info-details
+	background-color component-bg
+
+.rc-user-info-details__info
+	color component-fg
+	font-size .9em
+
+.rc-user-info-details__label
+	font-size 1em
+	margin-bottom 0.5em
+
+// Old sidebar.
 .flex-tab input:focus, .flex-tab select:focus, .flex-tab textarea:focus
 	border-color input-focus
 
 .flex-tab .channel-settings .button,
 .flex-tab .channel-settings .buttons .button
-	background-color darken(flex-tab-bg, 20%)
-	color chat-fg
+	background-color component-bg
+	color component-fg
 
 	&:hover
-		background-color darken(flex-tab-bg, 30%)
-		color lighten(chat-fg, 10%)
+		background-color darken(component-bg, 10%)
+		color lighten(component-fg, 10%)
 
 // All inputs except sidebar search.
 input, select, textarea,
@@ -255,11 +312,11 @@ input, select, textarea,
 
 .flex-tab .message.new-day
 	&::before
-		background-color flex-tab-bg
-		color mix(#fff, flex-tab-bg, 15%)
+		background-color sidebar-bg
+		color mix(#fff, sidebar-bg, 15%)
 
 	&::after
-		border-color mix(#fff, flex-tab-bg, 4%)
+		border-color mix(#fff, sidebar-bg, 4%)
 
 // File links.
 .rc-old .list-view.uploaded-files-list .file-name
@@ -331,21 +388,18 @@ code, .rc-old .code-colors
 	> li.add-reaction
 		border none
 
-// Toggle checkbox.
-.input.checkbox.toggle
-	label:before
-		background-color danger-color
+.input.checkbox.toggle label:before,
+.rc-switch__button,
+.rc-switch--blue .rc-switch__button
+	background-color component-fg
+	border-color component-fg
 
-	label:hover:before
-		background-color darken(danger-color, 10%)
-
-.input.checkbox.toggle,
-.flex-nav .input.checkbox.toggle
-	input:checked + label:before
-		background-color success-color
-
-	input:checked + label:hover:before
-		background-color darken(success-color, 10%)
+.input.checkbox.toggle input:checked + label:before,
+.flex-nav .input.checkbox.toggle input:checked + label:before,
+.rc-switch__input:checked + .rc-switch__button,
+.rc-switch--blue .rc-switch__input:checked + .rc-switch__button
+	background-color highlight-color
+	border-color highlight-color
 
 .rc-old .list-view > .title .see-all
 	text-decoration none
@@ -368,6 +422,12 @@ code, .rc-old .code-colors
 		color #fff
 
 // Popups like when uploading a file.
+.rc-modal
+	background-color component-bg
+
+.rc-modal__footer
+	background-color darken(component-bg, 10%)
+
 .sweet-alert
 	background-color component-bg
 
@@ -386,6 +446,7 @@ code, .rc-old .code-colors
 
 	// TODO: There are some gaps, I think they're always there but just more apparent against the dark background.
 	.sa-icon.sa-success::before,
+	background-color darken(component-bg, 10%)
 	.sa-icon.sa-success::after
 		background-color component-bg
 
@@ -408,8 +469,12 @@ code, .rc-old .code-colors
 		&:hover
 			background-color darken(button-secondary-bg, 10%)
 
-// When editing a message.
-.message.editing, .rc-message-box__container.editing
+.rc-old .message:hover
+	background-color transparent
+
+// Selecting a message.
+.message.editing, .rc-message-box__container.editing,
+.messages-box.selectable .selected
 	background-color mix(chat-bg, highlight-color, 90%)
 
 // Preferences page styles. Hopefully this gets updated to match all the other pages.
@@ -431,6 +496,12 @@ code, .rc-old .code-colors
 	.rc-popup-list__item-name
 		color #fff
 
+.rc-room-actions
+	color var(--color-darkest)
+
+.rc-icon, .rc-popover__icon-element
+	fill currentColor
+
 // Icons in inputs and markdown icons.
 .rc-input__icon,
 .rc-message-box .rc-icon,
@@ -442,13 +513,8 @@ code, .rc-old .code-colors
 		color lighten(icon-fg, 20%)
 		fill lighten(icon-fg, 20%)
 
-// Add fill for icons that don't work with color.
-.rc-popover__icon-element
-	fill var(--popover-item-color)
-
-// Add hover for the popover.
-.rc-popover__item:hover
-	background-color darken(component-bg, 10%)
+.contextual-bar .rc-popup-list__list
+	background-color darken(sidebar-bg, 10%)
 
 // Remove the border and space on mobile, we have our own.
 @media (max-width: 500px)
@@ -466,12 +532,15 @@ code, .rc-old .code-colors
 	.button
 		padding 7px
 
+// Errors underneath inputs.
 .rc-old #login-card .input-line .input-error
 	color danger-color
 
+// Mobile menu button.
 .burger i
 	background-color chat-fg
 
+// Bar that shows # of unread messages and lets you jump to them.
 .unread-bar
 	&, button
 		color #fff
@@ -479,8 +548,57 @@ code, .rc-old .code-colors
 	button:hover
 		color mix(#fff, highlight-color, 80%)
 
+// Announcement bar.
 .rc-old .announcement
 	background-color highlight-color
+
+.rc-user-info__row--separator
+	border-color lighten(border-color, 10%)
+	margin-bottom 4px
+
+// Select in the members list.
+.rc-select
+	border-color input-border
+	cursor pointer
+
+	select
+		border none
+
+// Notification preferences.
+.rc-user-info__config-value,
+.rc-popover__item-radio:checked + .rc-popover__item-radio-label
+	color highlight-color
+
+.rc-popover__item-radio-label::after
+	background-color highlight-color
+
+.rc-user-info__config-name,
+.rc-user-info__config-content-icon
+	color component-fg
+
+// Keyboard shortcuts.
+.rc-old .flex-tab-container .flex-tab .content .section
+	background-color component-bg
+	border none
+	color component-fg
+
+.rc-old .flex-tab-container .flex-tab .content .section,
+.contextual-bar__content .section
+	hr
+		background-color border-color
+		border none
+		height 1px
+
+	kbd
+		background-color darken(sidebar-bg, 20%)
+		padding 2px
+
+// Members list.
+.rc-member-list__user.active, .rc-member-list__user:hover
+	background-color mix(sidebar-bg, highlight-color, 90%)
+
+.rc-member-list__counter
+	color sidebar-fg
 
 @import "dark-admin"
 @import "atom-one-dark"
@@ -489,6 +607,7 @@ code, .rc-old .code-colors
 :root:root
 	// Bigger room titles like they used to be
 	--rooms-list-title-text-size 0.95rem
+	--popover-padding 10px 0
 
 // Less space after the room title.
 .rooms-list__type
@@ -533,6 +652,9 @@ code, .rc-old .code-colors
 	.rc-tags__tag:first-child
 		margin-left 1rem
 
+.rc-tags--no-icon
+	padding 0
+
 .messages-box ul
 	padding-bottom 20px
 
@@ -560,9 +682,6 @@ code, .rc-old .code-colors
 	&.sequential
 		border-top none
 		padding-top 0
-
-	&:hover
-		background-color transparent
 
 .rc-old .first-unread.new-day:before
 	color highlight-color
@@ -598,11 +717,15 @@ code, .rc-old .code-colors
 .message-actions
 	top 40px
 
+.message-actions__menu
+	padding 0
+
 .message.sequential .message-actions
 	top 0
 
 .messages-box .start
 	margin-top 0
+	padding 20px 0
 
 .rc-old .cozy .message
 	margin-top 10px
@@ -650,3 +773,35 @@ code, .rc-old .code-colors
 
 		.message-actions
 			top 0
+
+.contextual-bar__content
+	padding-top 0
+
+.rc-tags__input
+	border none !important
+	margin 0 !important
+
+.rc-old .list-view > .title
+	> p
+		margin-top 0 !important
+
+.rc-popover__title,
+.rc-popover__item
+	padding-left 16px
+	padding-right 16px
+
+.rc-popover__title
+	margin-top 6px
+
+.rc-popover__item:hover
+	background-color darken(component-bg, 10%)
+
+.rc-popover__divider
+	margin 0.5em 0
+
+.rc-old .flex-tab-container .flex-tab .content .section
+	margin 5px 20px
+
+.rc-header__name,
+.rc-header__block
+	font-size 1.25rem
