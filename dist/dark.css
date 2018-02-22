@@ -634,10 +634,16 @@ code,
 .rc-member-list__counter {
   color: #bbb;
 }
-.rc-switch-double__label {
+.rc-user-info__scroll .rc-switch-double__label.disabled {
   color: #595a5d;
 }
-.rc-switch-double__label.disabled {
+.rc-user-info__scroll .rc-switch-double__label {
+  color: #bbb;
+}
+.channel-settings .rc-switch-double__label {
+  color: #595a5d;
+}
+.channel-settings .rc-switch-double__label.disabled {
   color: #bbb;
 }
 .rc-old .page-settings .section,

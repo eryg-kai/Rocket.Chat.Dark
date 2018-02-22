@@ -655,13 +655,22 @@ code, .rc-old .code-colors
 .rc-member-list__counter
 	color sidebar-fg
 
-// Room info.
+// Switches.
 // Make it more obvious which one is selected.
-.rc-switch-double__label
-	color mix(sidebar-bg, sidebar-fg, 70%)
+.rc-user-info__scroll
+	.rc-switch-double__label.disabled
+		color mix(sidebar-bg, sidebar-fg, 70%)
 
-.rc-switch-double__label.disabled
-	color sidebar-fg
+	.rc-switch-double__label
+		color sidebar-fg
+
+// Weird, appears to be reversed on the room info panel.
+.channel-settings
+	.rc-switch-double__label
+		color mix(sidebar-bg, sidebar-fg, 70%)
+
+	.rc-switch-double__label.disabled
+		color sidebar-fg
 
 @import "dark-admin"
 @import "atom-one-dark"
