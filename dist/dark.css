@@ -646,6 +646,12 @@ code,
 .channel-settings .rc-switch-double__label.disabled {
   color: #bbb;
 }
+.attachments__name {
+  color: #c2c3c5;
+}
+.attachments__item:hover {
+  background-color: #2a2c31;
+}
 .rc-old .page-settings .section,
 .rc-old .page-container table {
   background-color: #2a2c31;
