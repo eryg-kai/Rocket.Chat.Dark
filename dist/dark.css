@@ -1072,3 +1072,6 @@ code,
 .body.color-primary-font-color.color-info-font-color {
     background-color: #222;
 }
+.body.color-primary-font-color {
+    background-color: #222;
+}
