@@ -1069,3 +1069,6 @@ code,
 .rc-header__block {
   font-size: 1.25rem;
 }
+.body.color-primary-font-color.color-info-font-color {
+    background-color: #222;
+}
