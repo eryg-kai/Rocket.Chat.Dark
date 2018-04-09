@@ -1070,8 +1070,10 @@ code,
   font-size: 1.25rem;
 }
 .body.color-primary-font-color.color-info-font-color {
+    padding: 7px;
     background-color: #222;
 }
 .body.color-primary-font-color {
+    padding: 7px;
     background-color: #222;
 }
