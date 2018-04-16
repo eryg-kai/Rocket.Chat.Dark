@@ -1071,12 +1071,8 @@ code,
   font-size: 1.25rem;
 }
 .rc-directory-channel-name {
-    font-size: 1rem;
-    font-weight: 500;
   	color: #bbb;
 }
 .rc-table-td {
-    padding: 1.25rem 0;
-    vertical-align: middle;
     color: #bbb;
 }
