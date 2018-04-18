@@ -984,7 +984,7 @@ code,
   text-decoration: underline;
 }
 :root:root {
-  --rooms-list-title-text-size: 0.95rem;
+  --rooms-list-title-text-size: 0.85rem;
   --popover-padding: 10px 0;
 }
 .rooms-list__type {
@@ -1000,9 +1000,6 @@ code,
 }
 .sidebar-item:hover .sidebar-item__menu {
   opacity: 1;
-}
-.toolbar {
-  padding: 0 10px 20px;
 }
 .rc-old .list-view > .title p {
   margin-top: 10px;
