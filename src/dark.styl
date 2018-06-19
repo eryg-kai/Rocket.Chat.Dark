@@ -94,6 +94,7 @@ icon-fg = mix(chat-bg, chat-fg, 50%)
 	--rc-color-alert-message-secondary-background component-bg
 	--chip-background highlight-color
 	--header-title-status-color darken(chat-fg, 20%)
+	--color-gray-lightest chat-fg
 
 .color-primary-font-color
 	color chat-fg
@@ -504,7 +505,7 @@ code, .rc-old .code-colors
 
 	// TODO: There are some gaps, I think they're always there but just more apparent against the dark background.
 	.sa-icon.sa-success::before,
-	background-color darken(component-bg, 10%)
+		background-color darken(component-bg, 10%)
 	.sa-icon.sa-success::after
 		background-color component-bg
 
@@ -679,13 +680,20 @@ code, .rc-old .code-colors
 .attachments__item:hover
 	background-color component-bg
 
+// Directory page.
+.rc-table
+	color chat-fg
+
+.rc-table-body .rc-table-tr:hover
+	background-color component-bg
+
 @import "dark-admin"
 @import "atom-one-dark"
 
 // The rest of these are opinionated "fixes".
 :root:root
-	// Bigger room titles like they used to be
-	--rooms-list-title-text-size 0.95rem
+	--rooms-list-title-text-size 0.85rem
+	// Less popover padding.
 	--popover-padding 10px 0
 
 // Less space after the room title.
@@ -704,9 +712,6 @@ code, .rc-old .code-colors
 
 .sidebar-item:hover .sidebar-item__menu
 	opacity 1
-
-.toolbar
-	padding 0 10px 20px
 
 .rc-old .list-view > .title p
 	margin-top 10px
