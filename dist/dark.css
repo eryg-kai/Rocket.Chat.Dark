@@ -676,15 +676,14 @@ code,
 .rc-old .page-container table th {
   background-color: transparent;
 }
-.rc-old .page-container table th,
-.rc-old .page-container table td {
-  border: none;
+.rc-old .page-container table th {
+  border-bottom: 1px solid #27282d;
 }
 .rc-old .page-container table tr:hover th {
-  background-color: #556396;
+  background-color: #27282d;
 }
 .rc-old .page-container table tr:hover td {
-  background-color: #6376b8;
+  background-color: #25262b;
 }
 .rc-old .page-container table thead th,
 .rc-old .page-container table thead td {
@@ -702,13 +701,19 @@ code,
   background-color: #26272b;
   color: #b8b9bb;
 }
-.page-list a,
-.page-settings a {
-  color: #7289da;
+.page-container a:not(.button):not(.rc-button) {
+  color: #7289da !important;
 }
-.page-list a:hover,
-.page-settings a:hover {
-  color: #5873d3;
+.page-container a:not(.button):not(.rc-button):hover {
+  color: #5873d3 !important;
+}
+.page-list a.button,
+.page-settings a.button {
+  color: #e2e7f7;
+}
+.page-list a.button:hover,
+.page-settings a.button:hover {
+  color: #e2e7f7;
 }
 .rc-old .page-settings .section-content .input-line {
   border-color: #3d4048;
@@ -753,7 +758,7 @@ code,
   color: #bbb;
 }
 .admin-integrations-new-panel .admin-integrations-new-item:hover {
-  background-color: #383e52;
+  background-color: #27282d;
 }
 .rc-old .page-settings .section .message.new-day::before {
   background-color: #2a2c31;
@@ -878,17 +883,14 @@ code,
 .rc-old .page-settings .section-content > .button {
   margin-top: 20px;
 }
-.rc-old .page-static .content .section:first-child h1 {
+.rc-old .page-static .content .section h1 {
   margin-top: 0;
   padding-left: 0;
-}
-.rc-old .page-static .content .section .section-content {
-  line-height: 1.45em;
 }
 .input-line textarea {
   width: 100%;
 }
-.rc-old .page-container .content .rocket-form .submit {
+.rc-old .page-settings .content .rocket-form .submit {
   margin-right: 20px;
 }
 .permissions-manager > a,
@@ -903,22 +905,11 @@ code,
   border-bottom-right-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
-.rc-old .select-arrow {
-  top: 7px;
-  z-index: 1;
-}
-.rc-old .colorpicker-swatch {
-  border-radius: 2px 0 0 2px;
-  height: 35px;
-  left: 0;
-  top: 0;
-  width: 35px;
-}
-.rc-old .page-settings .section .section-content {
-  padding-top: 0 !important;
-}
 .sidebar-light .sidebar-item__picture .avatar {
   box-shadow: none;
+}
+.page-list a.button {
+  margin-left: 0;
 }
 .hljs,
 .code-colors.hljs {

@@ -11,14 +11,14 @@
 	.admin-table-row, th
 		background-color transparent
 
-	th, td
-		border none
+	th
+		border-bottom 1px solid darken(component-bg, 8%)
 
 	tr:hover
 		th
-			background-color mix(component-bg, highlight-color, 40%)
+			background-color darken(component-bg, 8%)
 		td
-			background-color mix(component-bg, highlight-color, 20%)
+			background-color darken(component-bg, 13%)
 
 	thead
 		th, td
@@ -36,11 +36,21 @@
 	background-color darken(sidebar-bg, 20%)
 	color input-fg
 
-.page-list a, .page-settings a
-	color anchor-fg
+// Anchors inside pages. For some reason the
+// .integrate-other-ways anchors are !important.
+.page-container a:not(.button):not(.rc-button)
+	color anchor-fg !important
 
 	&:hover
-		color darken(anchor-fg, 10%)
+		color darken(anchor-fg, 10%) !important
+
+// Anchor buttons.
+.page-list a.button,
+.page-settings a.button
+	color button-fg
+
+	&:hover
+		color button-fg
 
 // Borders between input sections.
 .rc-old .page-settings .section-content .input-line
@@ -86,7 +96,7 @@
 	color component-fg
 
 	&:hover
-		background-color mix(component-bg, highlight-color, 80%)
+		background-color darken(component-bg, 8%)
 
 .rc-old .page-settings .section
 	.message.new-day::before
@@ -121,17 +131,14 @@
 	.section-content > .button
 		margin-top 20px
 
-.rc-old .page-static .content .section:first-child h1
+.rc-old .page-static .content .section h1
 	margin-top 0
 	padding-left 0
-
-.rc-old .page-static .content .section .section-content
-	line-height 1.45em
 
 .input-line textarea
 	width 100%
 
-.rc-old .page-container .content .rocket-form .submit
+.rc-old .page-settings .content .rocket-form .submit
 	margin-right 20px
 
 .permissions-manager > a,
@@ -146,20 +153,9 @@
 	border-bottom-right-radius 0 !important
 	border-top-right-radius 0 !important
 
-.rc-old .select-arrow
-	top 7px
-	z-index 1
-
-.rc-old .colorpicker-swatch
-	border-radius 2px 0 0 2px
-	height 35px
-	left 0
-	top 0
-	width 35px
-
-.rc-old .page-settings .section .section-content
-	padding-top 0 !important
-
 .sidebar-light .sidebar-item__picture
 	.avatar
 		box-shadow none
+
+.page-list a.button
+	margin-left 0
