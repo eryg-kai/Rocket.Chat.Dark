@@ -229,6 +229,10 @@ html, body, .content-background-color, .loading-animation
 	&:hover
 		color anchor-hover-fg
 
+// Mentions inside messages.
+.message .mention-link
+	background-color transparent
+
 // All avatars.
 .avatar
 	box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.5)
@@ -555,6 +559,16 @@ code, .rc-old .code-colors
 	.rc-popup-list__item-name
 		color #fff
 
+// Popup that appears above the message box.
+.message-popup
+	background-color component-bg
+
+.rc-old .message-popup-title
+	font-weight 700
+
+.rc-old .popup-item.selected
+	background-color highlight-color
+
 .rc-room-actions
 	color var(--color-darkest)
 
@@ -787,3 +801,9 @@ code, .rc-old .code-colors
 .rc-header__name,
 .rc-header__block
 	font-size 1.25rem
+
+// Shrink the avatars in the menu that appears when you type @.
+.rc-old .popup-user-avatar
+	height: 18px;
+	margin: -4px 4px;
+	width: 18px;

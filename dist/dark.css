@@ -192,6 +192,9 @@ body,
 .message a:hover {
   color: #5873d3;
 }
+.message .mention-link {
+  background-color: transparent;
+}
 .avatar {
   -webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
   box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.5);
@@ -546,6 +549,15 @@ code,
 .rc-popup-list__item.selected .rc-popup-list__item-name,
 .rc-popup-list__item:hover .rc-popup-list__item-name {
   color: #fff;
+}
+.message-popup {
+  background-color: #2a2c31;
+}
+.rc-old .message-popup-title {
+  font-weight: 700;
+}
+.rc-old .popup-item.selected {
+  background-color: #7289da;
 }
 .rc-room-actions {
   color: var(--color-darkest);
@@ -1075,4 +1087,9 @@ code,
 .rc-header__name,
 .rc-header__block {
   font-size: 1.25rem;
+}
+.rc-old .popup-user-avatar {
+  height: 18px;
+  margin: -4px 4px;
+  width: 18px;
 }
