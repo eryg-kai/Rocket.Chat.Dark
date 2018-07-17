@@ -562,15 +562,13 @@ code,
 .rc-room-actions {
   color: var(--color-darkest);
 }
-.rc-icon,
-.rc-popover__icon-element {
+.sidebar-item__menu-icon {
   fill: currentColor;
 }
 .rc-input__icon,
 .rc-message-box .rc-icon,
 .rc-message-box__toolbar-markdown-link {
   color: #7c7e81;
-  fill: #7c7e81;
 }
 .rc-input__icon:hover,
 .rc-message-box .rc-icon:hover,
