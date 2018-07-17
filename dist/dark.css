@@ -13,6 +13,8 @@
 :root:root {
   --badge-unread-background: #7289da;
   --rc-color-button-primary: #7289da;
+  --rc-color-primary: #c2c3c5;
+  --rc-color-primary-lightest: #2f3236;
   --rc-color-primary-dark: #2c2e32;
   --rc-color-primary-darkest: #282a2e;
   --status-online: #43b581;
