@@ -58,8 +58,13 @@
 html,
 body,
 .content-background-color,
-.loading-animation {
+.loading-animation,
+.full-page,
+.page-loading {
   background-color: #36393e;
+}
+.rc-old #login-card {
+  background-color: #2a2c31;
 }
 .secondary-background-color {
   background-color: #2a2c31;
