@@ -34,6 +34,7 @@ invisible-color = #bbb
 chat-bg = #36393e
 chat-fg = mix(#fff, chat-bg, 70%)
 border-color = darken(chat-bg, 10%)
+reply-color = sidebar-bg
 
 // Inputs.
 input-fg = mix(#000, chat-fg, 5%)
@@ -815,3 +816,6 @@ code, .rc-old .code-colors
 	height: 18px;
 	margin: -4px 4px;
 	width: 18px;
+
+.reply-preview
+	background-color reply-color !important
