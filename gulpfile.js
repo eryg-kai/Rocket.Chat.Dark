@@ -8,17 +8,6 @@ var fs = require('fs');
 var deploy = require('./lib/deploy.js');
 
 /**
- * Deploys the generated CSS file to Rocket.Chat.
- */
-gulp.task('deploy', ['dark', 'custom'], function (done) {
-	var file = fs.existsSync('src/custom.styl') ? 'custom.css' : 'dark.css';
-	deploy(__dirname + '/dist/' + file, function (error) {
-		done(error);
-		process.exit(); // TODO: Figure this out.
-	});
-});
-
-/**
  * Generates the standard works-for-everyone CSS files that get committed.
  */
 gulp.task('dark', function () {
@@ -41,7 +30,7 @@ gulp.task('dark', function () {
  * This generates a custom build that shouldn't be in source control. Only runs
  * if src/custom.styl exists.
  */
-gulp.task('custom', function () {
+gulp.task('custom', function (done) {
 	if (fs.existsSync('src/custom.styl')) {
 		return gulp.src('src/custom.styl')
 			.pipe(stylus())
@@ -57,10 +46,22 @@ gulp.task('custom', function () {
 			}))
 			.pipe(gulp.dest('dist'));
 	}
+	done();
 });
 
 gulp.task('watch', function () {
-	gulp.watch('src/dark*', ['dark']);
+	gulp.watch('src/dark*', gulp.series('dark'));
 });
 
-gulp.task('default', ['dark', 'custom']);
+/**
+ * Deploys the generated CSS file to Rocket.Chat.
+ */
+gulp.task('deploy', gulp.series('dark', 'custom', function (done) {
+	var file = fs.existsSync('src/custom.styl') ? 'custom.css' : 'dark.css';
+	deploy(__dirname + '/dist/' + file, function (error) {
+		done(error);
+		process.exit(); // TODO: Figure this out.
+	});
+}));
+
+gulp.task('default', gulp.series('dark', 'custom'));

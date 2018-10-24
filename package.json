@@ -19,21 +19,20 @@
     "theme"
   ],
   "devDependencies": {
-    "gulp": "3.9.x",
-    "gulp-autoprefixer": "5.0.x",
-    "gulp-clean-css": "3.9.x",
-    "gulp-rename": "1.3.x",
+    "gulp": "4.0.x",
+    "gulp-autoprefixer": "6.0.x",
+    "gulp-clean-css": "3.10.x",
+    "gulp-rename": "1.4.x",
     "gulp-stylus": "2.7.x",
-    "request": "2.87.x"
+    "request": "2.88.x"
   },
   "scripts": {
-    "gulp": "node_modules/.bin/gulp",
-    "build": "node_modules/.bin/gulp",
-    "watch": "node_modules/.bin/gulp watch",
-    "deploy": "node_modules/.bin/gulp deploy",
+    "build": "gulp",
+    "watch": "gulp watch",
+    "deploy": "gulp deploy",
     "version": "npm run gulp && git add -A dist",
     "postversion": "git push && git push --tags"
   },
   "analyze": true,
-  "license": "MIT"
+  "license": "Unlicense"
 }
