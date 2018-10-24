@@ -1104,3 +1104,6 @@ code,
 .reply-preview {
   background-color: #2a2c31 !important;
 }
+.reply-preview .message {
+  margin-top: 0px;
+}
