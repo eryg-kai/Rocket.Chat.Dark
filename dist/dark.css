@@ -79,7 +79,8 @@ body,
 .background-primary-action-color {
   background-color: #7289da;
 }
-.background-info-font-color {
+.background-info-font-color,
+.background-transparent-darker-before::before {
   background-color: #7289da;
 }
 .secondary-font-color {
