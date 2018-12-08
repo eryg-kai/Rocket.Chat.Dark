@@ -714,6 +714,20 @@ code, .rc-old .code-colors
 	background-color highlight-color
 	color #fff
 
+// Markdown tables.
+.message .body > table tr
+	border-top-color darken(component-bg, 15%)
+	background-color component-bg
+
+.message .body > table tr
+	background-color component-bg
+
+.message .body > table tr:nth-child(2n)
+	background-color darken(component-bg, 5%)
+
+.message .body > table tr td, .message .body > table tr th
+	border-color darken(component-bg, 15%)
+
 @import "dark-admin"
 @import "atom-one-dark"
 

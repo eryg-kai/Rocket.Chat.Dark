@@ -690,6 +690,20 @@ code,
   background-color: #7289da;
   color: #fff;
 }
+.message .body > table tr {
+  border-top-color: #24252a;
+  background-color: #2a2c31;
+}
+.message .body > table tr {
+  background-color: #2a2c31;
+}
+.message .body > table tr:nth-child(2n) {
+  background-color: #282a2f;
+}
+.message .body > table tr td,
+.message .body > table tr th {
+  border-color: #24252a;
+}
 .rc-old .page-settings .section,
 .rc-old .page-container table {
   background-color: #2a2c31;
