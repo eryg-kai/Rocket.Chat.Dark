@@ -53,6 +53,10 @@ gulp.task('watch', function () {
 	gulp.watch('src/dark*', gulp.series('dark'));
 });
 
+gulp.task('watch:deploy', function () {
+	gulp.watch('src/dark*', gulp.series('deploy'));
+});
+
 /**
  * Deploys the generated CSS file to Rocket.Chat.
  */
@@ -60,7 +64,6 @@ gulp.task('deploy', gulp.series('dark', 'custom', function (done) {
 	var file = fs.existsSync('src/custom.styl') ? 'custom.css' : 'dark.css';
 	deploy(__dirname + '/dist/' + file, function (error) {
 		done(error);
-		process.exit(); // TODO: Figure this out.
 	});
 }));
 
