@@ -51,4 +51,4 @@ background color this theme uses (recommended), set it to `#36393e`.
 3. Edit source in `src`
 
 ## Screenshots
-![Rocket.Chat.Dark screenshot](https://www.0x0049.com/static/screenshots/rocket.chat.dark.png)
+![Rocket.Chat.Dark screenshot](https://code.0x0049.me/static/screenshots/rocket.chat.dark.png)
