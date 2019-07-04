@@ -685,8 +685,8 @@ code,
 .rc-table-body .rc-table-tr:hover {
   background-color: #2a2c31;
 }
-.message .info .is-bot,
-.message .info .role-tag {
+.message .title .is-bot,
+.message .title .role-tag {
   background-color: #7289da;
   color: #fff;
 }
@@ -1121,4 +1121,13 @@ code,
 }
 .reply-preview .message {
   margin-top: 0px;
+}
+.contextual-bar__header {
+  background-color: #2a2c31;
+}
+.emoji-picker {
+  background-color: #2a2c31;
+}
+.rc-popover__item:hover {
+  background-color: rgba(0, 0, 0, 0.3); /* @transparent-dark */
 }
