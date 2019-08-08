@@ -81,7 +81,7 @@ body,
 }
 .background-info-font-color,
 .background-transparent-darker-before::before {
-  background-color: #7289da  !important;
+  background-color: #7289da;
 }
 .secondary-font-color {
   color: #e2e7f7  !important;
